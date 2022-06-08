@@ -1,0 +1,14 @@
+*,::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap');
+
+.home-page,
+.about-page,
+.products-page,
+.single-product-page,
+.cart-page{
+    padding-top: 75px;
+}

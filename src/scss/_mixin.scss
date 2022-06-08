@@ -1,0 +1,18 @@
+@import 'variables';
+
+@mixin flexCenter($justifyContent: none) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: center;
+}
+
+@mixin marginCenter{
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+@mixin mobile($maxWidth){
+    @media screen and (max-width: $maxWidth) {
+        @content;
+    }
+}

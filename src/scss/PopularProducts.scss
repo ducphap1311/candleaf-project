@@ -1,0 +1,14 @@
+@import 'Products';
+
+.popular-products-container{
+    @extend .products-container;
+
+    .product-list{
+        text-decoration: none;
+        
+        .product{
+            text-decoration: none;
+        }
+    }
+}
+
