@@ -1,5 +1,4 @@
 import React from 'react'
-import '../scss/Footer.css'
 import footer from '../images/footer-icon.svg'
 
 export const Footer = () => {

@@ -1,6 +1,5 @@
 import React from 'react'
 import data from '../data/ProductsData'
-import '../scss/PopularProducts.css'
 import { Link } from 'react-router-dom'
 
 export const PopularProducts = () => {

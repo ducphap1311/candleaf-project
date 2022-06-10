@@ -1,16 +1,13 @@
-import React, {useEffect, useReducer, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import data from '../data/ProductsData'
 import { useParams } from 'react-router-dom'
-import '../scss/SingleProduct.css'
 import logo from '../images/card-icon2.svg'
-import { useGlobalContext } from '../context'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
 
 export const SingleProduct = () => {
     const {id} = useParams();
     const [singleProduct, setSingleProduct] = useState({})
-    // const {add} = useGlobalContext();
     const [amount, setAmount] = useState(1);
     const dispatch = useDispatch()
 

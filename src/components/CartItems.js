@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react'
-import { useGlobalContext } from '../context'
-import '../scss/CartItems.css'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { increaseItem, decreaseItem, removeItem  } from '../features/cart/cartSlice'
 
 export const CartItems = () => {
-    // const {cartItems, increase, decrease, removeItem} = useGlobalContext();
     const dispatch = useDispatch();
     const {cartItems} = useSelector((store) => store.cart)
 

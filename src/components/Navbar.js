@@ -1,16 +1,13 @@
 import React, {useState} from 'react'
 import {Link, NavLink} from 'react-router-dom'
-import '../scss/Navbar.css'
 import logoImg from '../images/logo-img.svg'
 import logoText from '../images/logo-text.svg'
 import userIcon from '../images/user-icon.svg'
 import cardIcon from '../images/card-icon.svg'
-// import { useGlobalContext } from '../context'
 import { useSelector } from 'react-redux'
 
 export const Navbar = () => {
     const [show, setShow] = useState(false)
-    // const {amount} = useGlobalContext();
     const {amount} = useSelector((store) => store.cart)
 
     return (

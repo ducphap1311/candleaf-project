@@ -1,5 +1,4 @@
 import React from 'react'
-import '../scss/About.css'
 import icon from '../images/icon.svg'
 import aboutImg from '../images/about-img.png'
 
