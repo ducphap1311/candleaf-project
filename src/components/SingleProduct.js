@@ -21,7 +21,7 @@ export const SingleProduct = () => {
     })
 
     const increaseAmount = () => {
-        setAmount(amount + 1);
+        setAmount(amount + 1) ;
     }
 
     const decreaseAmount = () => {
