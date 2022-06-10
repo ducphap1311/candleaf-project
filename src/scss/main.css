@@ -794,6 +794,7 @@
 .sidebar-icons li {
   margin: 20px;
   cursor: pointer;
+  position: relative;
 }
 
 .sidebar-icons__card {
@@ -805,6 +806,8 @@
   position: absolute;
   font-size: 20px;
   font-weight: bold;
+  top: -15px;
+  right: -10px;
 }
 
 .show-sidebar {
