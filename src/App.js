@@ -11,7 +11,6 @@ import './scss/main.css';
 import { useEffect } from 'react';
 import { getTotalAmount } from './features/cart/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import './scss/main.css';
 
 function App() {
   const dispatch = useDispatch()
