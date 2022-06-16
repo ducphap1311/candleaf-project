@@ -4,7 +4,7 @@
 .products-container{
     @include marginCenter;
     font-family: $font-poppins;
-    padding: 90px 0 100px;
+    padding: 90px 0 88px;
 }
 
 .products-header{
@@ -24,6 +24,7 @@
         line-height: 27px;
         font-weight: 500;
         color: #5E6E89;
+        margin-bottom: 60px;
     }
 }
 
@@ -32,32 +33,40 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    
+
     .product{
-        box-shadow: 2px 4px 8px rgb(219, 219, 219);
+        box-shadow: 2px 4px 8px rgb(235, 235, 235);
         text-decoration: none;
         max-width: 255px;
-        margin: 20px auto;
+        margin: 0 auto 20px;
         width: fit-content;
+
+        &:hover{
+            box-shadow: 2px 4px 8px rgb(173, 173, 173);
+        }
 
         &__img{
             width: 100%;
-            background-color: rgb(237, 237, 237);
+            background-color: rgb(245, 245, 245);
         }
 
         &__name{
             line-height: 27,6px;
             font-weight: normal;
-            margin: 10px;
+            margin: 10px 0 0 26px;
             color: black;
         }
 
         &__price{
             color: $primary-color;
             text-align: right;
-            margin: 0 15px 5px;
+            margin: 0 26px 16px;
+            font-weight: 500;
             font-size: 20px;
+            font-family: $font-roboto;
         }
+
+
     }
 }
 
@@ -74,14 +83,40 @@
 }
 
 @include mobile(570px){
-        .products-list{
-            grid-template-columns: 1fr;
-            max-width: none;
-            width: 100%;
+    .products-container{
+        padding: 50px 0 69px;
+    }
 
-            .product{
-                width: 100%;
-                height: auto;
+    .products-header{
+        &__title{
+
+            &__subtitle{
+                margin-bottom: 69px;
             }
         }
+    }
+
+    .products-list{
+        grid-template-columns: 1fr;
+        max-width: none;
+        width: 100%;
+
+        .product{
+            width: 90%;
+        }
+
+        .more-products-btn{
+            font-family: $font-roboto;
+            background: #56B280;
+            border-radius: 4px;
+            font-size: 20.6452px;
+            color: white;
+            border: none;
+            display: block;
+            margin: auto;
+            padding: 8px 44px;
+            text-decoration: none;
+            margin-top: 44px;
+        }
+    }   
 }

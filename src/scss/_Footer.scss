@@ -6,52 +6,60 @@
     @include marginCenter;
     background-color: #272727;
     color: white;
-    padding: 20px;
+    padding-top: 60px;
     
     .footer-underline{
         max-width: 1110px;
-        margin: 30px auto;
+        margin: 0 auto;
         height: 0.1rem;
         background-color: rgb(255, 255, 255);
     }
 
     .footer-info{
-        display: flex;
-        justify-content: space-between;
         max-width: 1110px;
         margin: auto;
-        
-        .header-info{
+        display: flex;
+        justify-content: space-between;
+
+        .footer-header{
             margin: 10px;
             
             &__logo{
                 @include flexCenter;
                 max-width: 250px;
                 height: 100px;
-                
-                .footer-img{
-                    margin-right: 10px;
-                }
+            }
 
-                h2{
-                    font-weight: 500;
-                }
+            &__img{
+                margin-right: 12px;
+                width: 63.36px;
+                height: 63.36px;
+            }
+            
+            &__title{
+                width: 160.7px;
+                height: 27.55px;
             }
 
             &__subtitle{
-                max-width: 250px;
+                font-style: normal;
+                max-width: 255px;
                 height: 46px;
                 font-weight: 400;
                 line-height: 23px;
                 letter-spacing: -0.5px;
+                font-size: 16px;
             }
+        }
 
+        .footer-informations{
+            display: flex;
         }
 
         .contact-info,
         .about-us,
         .connect-with-us{
-            margin: 10px;
+            margin: 20px;
 
             &__title{
                 color: $primary-color;
@@ -113,6 +121,7 @@
     .footer-container{
 
         .footer-info{
+            display: inline;
             flex-direction: column;
             margin: 0 auto;
             width: fit-content;
@@ -123,6 +132,11 @@
                 &__logo{
                     border: none;
                 }
+            }
+
+            .footer-informations{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
             }
         }
     }

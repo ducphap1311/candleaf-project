@@ -2,13 +2,27 @@
 
 .popular-products-container{
     @extend .products-container;
+}
 
-    .product-list{
+.products-list{
+    text-decoration: none;
+    
+    .product{
         text-decoration: none;
-        
-        .product{
-            text-decoration: none;
-        }
+    }
+
+    .more-products-btn{
+        font-family: $font-roboto;
+        background: #56B280;
+        border-radius: 4px;
+        font-size: 20.6452px;
+        color: white;
+        border: none;
+        display: block;
+        margin: auto;
+        padding: 8px 44px;
+        text-decoration: none;
+        margin-top: 44px;
     }
 }
 
