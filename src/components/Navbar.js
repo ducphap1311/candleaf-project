@@ -3,17 +3,16 @@ import {Link, NavLink} from 'react-router-dom'
 import logoImg from '../images/logo-img.svg'
 import logoText from '../images/logo-text.svg'
 import userIcon from '../images/user-icon.svg'
-import cardIcon from '../images/card-icon.svg'
+import cartIcon from '../images/card-icon.svg'
 import menuIcon from '../images/hamburger-menu.png';
 import closeIcon from '../images/close-menu.png';
-
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 export const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false)
-    const {amount} = useSelector((store) => store.cart)
-    const linksContainerRef = useRef(null);
-    const linksRef = useRef(null);
+    const { amount } = useSelector((store) => store.cart)
+    const linksContainerRef = useRef();
+    const linksRef = useRef();
 
     useEffect(() => {
         const linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -41,8 +40,8 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <Link to="/cart" className='navbar-header__cart'>
-                                <img src={cardIcon} alt="card" className='navbar-header__card-img' />
-                                <div className='navbar-header__card-amount'>{amount}</div>
+                                <img src={cartIcon} alt="card" className='navbar-header__cart-img' />
+                                <div className='navbar-header__cart-amount'>{amount}</div>
                             </Link>
                         </li>
                     </ul>    
@@ -61,12 +60,12 @@ export const Navbar = () => {
                     </ul>
                     <ul className='navbar-links__icons-links'>
                         <li>
-                            <img src={userIcon} alt="user" className='navbar-links__user-img'/>
+                            <img src={userIcon} alt="user" className='navbar-links__user-icon'/>
                         </li>
                         <li>
-                            <Link to="/cart" className='navbar-links__cart'>
-                                <img src={cardIcon} alt="card" className='navbar-links__card-img' />
-                                <div className='navbar-links__card-amount'>{amount}</div>
+                            <Link to="/cart" className='navbar-links__cart-container'>
+                                <img src={cartIcon} alt="card" className='navbar-links__cart-icon' />
+                                <div className='navbar-links__cart-amount'>{amount}</div>
                             </Link>
                         </li>
                     </ul>

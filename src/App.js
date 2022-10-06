@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
-import {Navbar} from './components/Navbar'
+import {Navbar} from './components/Navbar';
 import { AboutPage } from './pages/AboutPage';
 import { SingleProductPage } from './pages/SingleProductPage';
 import { CartPage } from './pages/CartPage';
@@ -11,6 +11,8 @@ import './scss/main.css';
 import { useEffect } from 'react';
 import { getTotalAmount } from './features/cart/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { AuthenticationPage } from './pages/AuthenticationPage';
+import { ShippingPage } from './pages/ShippingPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -30,6 +32,8 @@ function App() {
         <Route path='/singleproduct/:id' element={<SingleProductPage />} />
         <Route path='/cart' element={<CartPage />} />
         <Route path='/products' element={<ProductsPage />}/>
+        <Route path='/authentication' element={<AuthenticationPage />} />
+        <Route path='/shipping' element={<ShippingPage />} />
       </Routes>
     </Router>
   );

@@ -2,10 +2,9 @@
 @import 'mixin';
 
 .hero-container{
+    font-family: $font-poppins;
     @include marginCenter;
     position: relative; 
-    font-family: $font-poppins;
-    background-color: black;
     height: 705px;
 
     .hero-img{  
@@ -34,7 +33,7 @@
             font-weight: 500;  
         }
     
-        &__subtile{
+        &__subtitle{
             font-family: $font-roboto;
             margin: 0 auto;
             font-size: 18px;
@@ -45,9 +44,10 @@
         }
     
         &__discovery-btn{
+            text-decoration: none;
             font-family: $font-roboto;
-            max-width: 310px;
-            height: 40px;
+            // max-width: 310px;
+            // height: 40px;
             background: $primary-color;
             border-radius: 4px;
             display: block;
@@ -59,17 +59,16 @@
             padding: 8px 45px;
             @include flexCenter;
             cursor: pointer;
-            border: none;
+            border: 1px solid transparent;
 
-            // &:hover{
-            //     background-color: white;
-            //     color: $primary-color
-            // }
+            &:hover{
+                @include hoverButton;
+            }
         }
     }
 }
 
-@media screen and (max-width: 850px) {
+@include mobile(850px) {
     .hero-container{
         
         .hero-modal{
@@ -77,3 +76,43 @@
         }
     }    
 }
+
+@include mobile(376px){
+    .hero-container{
+
+        .hero-modal{
+
+            &__title{
+                line-height: 48px;
+                margin-bottom: 10px;
+            }
+
+            &__subtitle{
+                line-height: 20px;
+                margin-bottom: 35px;
+            }
+
+            &__discovery-btn{
+
+            }
+        }
+    }
+}
+
+@include mobile(280px){
+    .hero-container{
+
+        .hero-modal{
+
+            &__title{
+                line-height: 48px;
+                margin-bottom: 10px;
+            }
+
+            &__discovery-btn{
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+

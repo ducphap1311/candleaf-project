@@ -17,27 +17,28 @@ export const Footer = () => {
                         <p className='footer-header__subtitle'>Your natural candle made for your home and for your wellness.</p>
                     </div>
                     <div className='footer-informations'>
-                        <div className='contact-info'>
-                            <h4 className='contact-info__title'>CONTACT INFO</h4>
-                            <div className='contact-info__informations'>
-                                <p><i className='fa fa-map-marker'></i>CuKuin District, DakLak Province</p>
-                                <p><i className='fa fa-phone'></i>0825 820 709</p>
-                                <p><i className='fa fa-envelope'></i>hophap1311@gmail.com</p>
+                        <div className='discovery'>
+                            <h4 className='discovery__title'>Discovery</h4>
+                            <div className='discovery__informations'>
+                                <p>New season</p>
+                                <p>Most searched</p>
+                                <p>Most selled</p>
                             </div>
                         </div>
-                        <div className='about-us'>
-                            <h4 className='about-us__title'>ABOUT US</h4>
-                            <div className='about-us__informations'>
-                                <p><i className='fa fa-arrow-right'></i>Help</p>
-                                <p><i className='fa fa-arrow-right'></i>Shipping</p>
-                                <p><i className='fa fa-arrow-right'></i>Affiliate</p>
+                        <div className='about'>
+                            <h4 className='about__title'>About</h4>
+                            <div className='about__informations'>
+                                <p>Help</p>
+                                <p>Shipping</p>
+                                <p>Affiliate</p>
                             </div>
                         </div>
-                        <div className='connect-with-us'>
-                            <h4 className='connect-with-us__title'>CONNECT WITH US</h4>
-                            <div className='connect-with-us__informations'>
-                                <p><a href='https://www.facebook.com/profile.php?id=100009562365980' target='_blank'><i className='fab fa-facebook'></i>FaceBook</a></p>
-                                <p><a href='https://www.facebook.com/profile.php?id=100009562365980' target='_blank'><i className='fab fa-instagram'></i>Instagram</a></p>
+                        <div className='info'>
+                            <h4 className='info__title'>Info</h4>
+                            <div className='info__informations'>
+                                <p>Contact us</p>
+                                <p>Privacy Policies</p>
+                                <p>Terms &amp; Conditions</p>
                             </div>
                         </div>
                     </div>

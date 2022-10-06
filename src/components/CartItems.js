@@ -5,7 +5,7 @@ import { increaseItem, decreaseItem, removeItem  } from '../features/cart/cartSl
 
 export const CartItems = () => {
     const dispatch = useDispatch();
-    const {cartItems} = useSelector((store) => store.cart)
+    const {cartItems, total} = useSelector((store) => store.cart)
 
     if(cartItems.length !== 0){
         return (
@@ -22,34 +22,44 @@ export const CartItems = () => {
                             <h3 className='title__quantity'>Quantity</h3>
                             <h3 className='title__total'>Total</h3>
                         </div>
-                        <hr />
                         {cartItems.map(item => {
                         const {id, img, name, price, amount} = item;
                         return <div key={id} className="item">
                             <div className="item__info">
                                 <img srcSet={`${img} 4x`} alt="img" className='product__img'/>
                                 <div className='product__info'>
-                                    <h2 className='product__name'>{name} Candleaf®</h2>
-                                    <p className='product__price'>${price}</p>
-                                    <div className='product__quantity'>
+                                    <div>
+                                        <h2 className='product__name'>{name} Candleaf®</h2>
+                                        <button className='remove-btn' onClick={() => dispatch(removeItem(id))}>Remove</button>
+                                    </div>
+                                    <div>
+                                        <p className='product__price'>${price}</p>
+                                        <div className='product__quantity'>
+                                            <button className='btn increase-btn' onClick={() => dispatch(increaseItem(id))}><i className='fas fa-plus'></i></button>
+                                            <span>{amount}</span>
+                                            <button className='btn decrease-btn' onClick={() => dispatch(decreaseItem(id))}><i className='fas fa-minus'></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p className='item__price'>{price}</p>
+                            <div className='item__quantity'>
+                                    <div className='quantity-container'>
                                         <button className='btn increase-btn' onClick={() => dispatch(increaseItem(id))}><i className='fas fa-plus'></i></button>
                                         <span>{amount}</span>
                                         <button className='btn decrease-btn' onClick={() => dispatch(decreaseItem(id))}><i className='fas fa-minus'></i></button>
-                                    </div>
-                                    <button className='remove-btn' onClick={() => dispatch(removeItem(id))}>Remove</button>
+                                    </div>            
                                 </div>
-                            </div>
-                            <p className='item__price'>${price}</p>
-                            <div className='item__quantity'>
-                                <div className='quantity-container'>
-                                    <button className='btn increase-btn' onClick={() => dispatch(increaseItem(id))}><i className='fas fa-plus'></i></button>
-                                    <span>{amount}</span>
-                                    <button className='btn decrease-btn' onClick={() => dispatch(decreaseItem(id))}><i className='fas fa-minus'></i></button>
-                                </div>            
-                            </div>
                             <p className='item__total'>${(price*amount).toFixed(2)}</p>
                         </div>     
                     })}
+                    </div>
+                    <div className='cart-items-check-out'>
+                        <div className='cart-items-check-out__sub-total'>
+                            <p className='cart-items-check-out__total'>Sub-total<span>${total.toFixed(2)}</span></p>
+                            <p className='cart-items-check-out__tax'>Tax and shipping cost will be calculated later</p>
+                        </div>
+                        <Link to="/authentication"><button>Check-out</button></Link>
                     </div>
                 </div>
             </div>

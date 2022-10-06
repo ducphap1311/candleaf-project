@@ -1,4 +1,6 @@
-*,::after, ::before{
+*,
+::after, 
+::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,6 +10,8 @@
 .about-page,
 .products-page,
 .single-product-page,
-.cart-page{
+.cart-page
+.authentication-page,
+.shipping-page{
     padding-top: 75px;
 }

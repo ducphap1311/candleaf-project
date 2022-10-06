@@ -6,7 +6,7 @@
     @include marginCenter;
     background-color: #272727;
     color: white;
-    padding-top: 60px;
+    padding: 60px 0 95px;
     
     .footer-underline{
         max-width: 1110px;
@@ -22,12 +22,12 @@
         justify-content: space-between;
 
         .footer-header{
-            margin: 10px;
+            margin-top: 16px;
             
             &__logo{
                 @include flexCenter;
                 max-width: 250px;
-                height: 100px;
+                margin-bottom: 16px;
             }
 
             &__img{
@@ -54,12 +54,13 @@
 
         .footer-informations{
             display: flex;
+            margin-top: 44px;
         }
 
-        .contact-info,
-        .about-us,
-        .connect-with-us{
-            margin: 20px;
+        .discovery,
+        .about,
+        .info{
+            margin: 0 20px 20px;
 
             &__title{
                 color: $primary-color;
@@ -85,34 +86,8 @@
             }
         }
 
-        .about-us{
-            @extend .contact-info;
-        }
-
-        .connect-with-us{
-            
-
-            &__informations{
-
-                    .fa-facebook{
-                        color: rgb(0, 99, 212);
-                        background-color: white;
-                        font-size: 20px;
-                        margin-right: 5px;
-                    }
-                    
-                    .fa-instagram{
-                        color: rgb(187, 53, 76);
-                        background-color: white;
-                        font-size: 20px;
-                    }
-                    
-                    a{
-                        text-decoration: none;
-                        color: #E1E1E1;
-                    }
-                
-            }
+        .about{
+            @extend .discovery;
         }
     }
 }
@@ -126,17 +101,22 @@
             margin: 0 auto;
             width: fit-content;
             
-            .header-info{
-                margin-bottom: 20px;
+            .footer-header{
+                margin: 16px 10px 20px;
 
                 &__logo{
                     border: none;
+                }
+
+                &__subtitle{
+                    max-width: none;
                 }
             }
 
             .footer-informations{
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                justify-content: start;
             }
         }
     }

@@ -35,14 +35,14 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     .product{
-        box-shadow: 2px 4px 8px rgb(235, 235, 235);
+        box-shadow: 0 0 8px rgb(219, 219, 219);
         text-decoration: none;
         max-width: 255px;
         margin: 0 auto 20px;
         width: fit-content;
 
         &:hover{
-            box-shadow: 2px 4px 8px rgb(173, 173, 173);
+            box-shadow: 0px 0px 8px rgb(173, 173, 173);
         }
 
         &__img{
@@ -59,11 +59,11 @@
 
         &__price{
             color: $primary-color;
+            font-family: $font-roboto;
             text-align: right;
             margin: 0 26px 16px;
             font-weight: 500;
             font-size: 20px;
-            font-family: $font-roboto;
         }
 
 
@@ -107,7 +107,7 @@
 
         .more-products-btn{
             font-family: $font-roboto;
-            background: #56B280;
+            background: $primary-color;
             border-radius: 4px;
             font-size: 20.6452px;
             color: white;
@@ -117,6 +117,11 @@
             padding: 8px 44px;
             text-decoration: none;
             margin-top: 44px;
+            border: 1px solid transparent;
+            
+            &:hover{
+                @include hoverButton;
+            }
         }
     }   
 }
