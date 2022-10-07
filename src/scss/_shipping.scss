@@ -2,6 +2,7 @@
 @import "mixin";
 @import "global";
 
+
 .shipping-container{
     @include marginCenter();
     font-family: $font-roboto;
@@ -10,12 +11,15 @@
 }
 
 .shipping-text{
-    // max-width: 735px;
-    
+    .authentication-titles{
 
+        .details-title{
+            color: $primary-color;
+        }
+    }
+    
     &__address,
-    &__method,
-    &__shipping-btn{
+    &__method{
         width: 455px;
     }
 
@@ -299,7 +303,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1450px) {
     .shipping-text{
 
         &__shipping-btn{
@@ -332,22 +336,26 @@
         &__shipping-btn{
             flex-direction: column;
             margin: 0 0 60px 0;
-            margin-bottom: 60px;
             
             .back-to-details-link{
                 display: none;
             }
 
-            .payment-link{
+            .payment-link{               
                 margin-bottom: 25px;
+                display: block;
+                width: 100%;
+                
+                button{
+                    width: 100%;
+                }
             }
 
             .back-to-details-link-r{
                 text-decoration: none;
                 color: $primary-color;
                 text-decoration: underline;
-                font-size: 18px;
-                
+                font-size: 18px;   
             }
         }
     }
@@ -367,6 +375,7 @@
         &__shipping-btn{
             width: 100%;
         }
+
     }
 
     .shipping-products{

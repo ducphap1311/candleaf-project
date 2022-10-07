@@ -25,10 +25,17 @@ export const Authentication = () => {
                     <div className='authentication-text__shipping-address'>
                         <h2>Shipping Address</h2>
                         <form>
-                            <input type="text" placeholder='Name' className='name-input'/><input type="text" placeholder='Second Name' className='second-name-input'/>
+                            <div className='name'>
+                                <input type="text" placeholder='Name' className='name-input'/>
+                                <input type="text" placeholder='Second Name' className='second-name-input'/>
+                            </div>
                             <input type="text" placeholder='Address and number' className='address-num-input'/>
                             <input type="text" placeholder='Shipping note (optional)' className='shipping-note-input'/>
-                            <input type="text" placeholder='City' className='city-input'/><input type="text" placeholder='Postal Code' className='code-input'/><input type="text" placeholder='Province' className='province-input'/>
+                            <div className='address'>
+                                <input type="text" placeholder='City' className='city-input'/>
+                                <input type="text" placeholder='Postal Code' className='code-input'/>
+                                <input type="text" placeholder='Province' className='province-input'/>
+                            </div>
                             <input type="text" placeholder='Country Region' className='country-input' required/>
                             <input type="checkbox" className='save-checkbox' name="save"/>
                             <label htmlFor="save">Save this informations for a future fast checkout</label>

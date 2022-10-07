@@ -13,6 +13,7 @@ import { getTotalAmount } from './features/cart/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { AuthenticationPage } from './pages/AuthenticationPage';
 import { ShippingPage } from './pages/ShippingPage';
+import { PaymentPage } from './pages/PaymentPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -34,6 +35,7 @@ function App() {
         <Route path='/products' element={<ProductsPage />}/>
         <Route path='/authentication' element={<AuthenticationPage />} />
         <Route path='/shipping' element={<ShippingPage />} />
+        <Route path='/payment' element={<PaymentPage />} />
       </Routes>
     </Router>
   );
