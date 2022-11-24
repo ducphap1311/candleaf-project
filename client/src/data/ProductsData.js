@@ -43,7 +43,7 @@ const data = [
     {
         id: 5,
         img: product5,
-        name: "Product name",
+        name: "Sweet Vi",
         price: 9.99,
         popular: false,
         amount: 1

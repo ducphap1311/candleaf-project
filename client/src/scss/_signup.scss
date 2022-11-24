@@ -1,0 +1,73 @@
+@import 'variables';
+
+.sign-up{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+form{
+    border: 3px solid $primary-color;
+    padding: 10px;
+}
+
+.success {
+    color: green;
+}
+
+.form-item {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-btn {
+    width: 150px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    border: 2px solid $primary-color;
+    border-radius: 8px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 2560px) {
+    .form-item {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 1921px) {
+    .form-item {
+        width: 400px;
+        padding-bottom: 4px;
+    }
+
+    .form-item input {
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .form-item {
+        width: 85vw;
+    }
+}

@@ -6,13 +6,18 @@ import userIcon from '../images/user-icon.svg'
 import cartIcon from '../images/card-icon.svg'
 import menuIcon from '../images/hamburger-menu.png';
 import closeIcon from '../images/close-menu.png';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { checkIsLogin } from '../features/cart/cartSlice'
 
 export const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false)
-    const { amount } = useSelector((store) => store.cart)
+    const { amount, isLogin } = useSelector((store) => store.cart)
     const linksContainerRef = useRef();
     const linksRef = useRef();
+    const [open, setOpen] = useState(false)
+    const [userName, setUserName] = useState("")
+    const [out, setOut] = useState(false)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -23,7 +28,31 @@ export const Navbar = () => {
         }
     }, [showLinks]);
 
-    return (
+    useEffect(() => {
+        const user = localStorage.getItem("userName");
+        if(user){
+            setUserName(user)
+            setOpen(false)
+            // dispatch(checkIsLogin())
+        } else {
+            setUserName("")
+        }
+    }, [isLogin])
+
+    useEffect(() => {
+        const user = localStorage.getItem("userName")
+        if(user){
+            dispatch(checkIsLogin())
+        }
+    }, [])
+
+    const userLogOut = () => {
+        localStorage.removeItem("token")
+        localStorage.removeItem("userName")
+        dispatch(checkIsLogin())
+    }
+
+    return ( 
         <div className='navbar'>
             <div className='navbar-container'>
                 <div className='navbar-header'>
@@ -35,8 +64,16 @@ export const Navbar = () => {
                         <img src={logoText} alt='candleaf-text' className='navbar-header__logo-text'/>
                     </Link>   
                     <ul className='navbar-header__icons-links'>
-                        <li>
-                            <img src={userIcon} alt="user"/>
+                        <li className='navbar-links__user-container'>
+                            {isLogin ? <div className='username-container'>
+                                    <p onClick={() => setOut(!out)}>{userName}</p>
+                                    {out && <p onClick={userLogOut}>Log out</p>}
+                                    </div> : <img src={userIcon} alt="user" className='navbar-links__user-icon' onClick={() => setOpen(!open)}/>}
+                            {open && <div className='sign'>
+                                        <Link to='/signup' className='link' onClick={() => setOpen(false)}>Sign up</Link>
+                                        <Link to='/signin' className='link'>Sign in</Link>
+                                    </div>}
+                            
                         </li>
                         <li>
                             <Link to="/cart" className='navbar-header__cart'>
@@ -59,8 +96,16 @@ export const Navbar = () => {
                         </li>
                     </ul>
                     <ul className='navbar-links__icons-links'>
-                        <li>
-                            <img src={userIcon} alt="user" className='navbar-links__user-icon'/>
+                        <li className='navbar-links__user-container'>
+                            {isLogin ? <div className='username-container'>
+                                    <p onClick={() => setOut(!out)}>{userName}</p>
+                                    {out && <p onClick={userLogOut}>Log out</p>}
+                                    </div> : <img src={userIcon} alt="user" className='navbar-links__user-icon' onClick={() => setOpen(!open)}/>}
+                            {open && <div className='sign'>
+                                        <Link to='/signup' className='link' onClick={() => setOpen(false)}>Sign up</Link>
+                                        <Link to='/signin' className='link'>Sign in</Link>
+                                    </div>}
+                            
                         </li>
                         <li>
                             <Link to="/cart" className='navbar-links__cart-container'>

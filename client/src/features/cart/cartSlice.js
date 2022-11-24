@@ -1,12 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
-import data from "../../data/ProductsData";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// import data from "../../data/ProductsData";
 
 const initialState = {
     cartItems: [],
     amount: 0,
     total: 0,
-    isLoading: false
+    isLoading: false,
+    isLogin: false,
+    data: []
 }
+
+export const getAllCandleafs = createAsyncThunk('card/getAllCarts', () => {
+    const url = 'https://candleafs-api.herokuapp.com/api/v1/candleafs?'
+    return fetch(url).then((resp) => resp.json()).then(data => console.log(data)).catch((err) => console.log(err))
+})
 
 const cartSlice = createSlice({
     name: "cart",
@@ -25,7 +32,7 @@ const cartSlice = createSlice({
             if(flag){
                 state.cartItems = items;
             } else {
-                const newItem = data.filter(item => item.id == action.payload.id)
+                const newItem = state.data.filter(item => item._id == action.payload.id)
                 newItem[0].amount = action.payload.amount;
                 state.cartItems = [...state.cartItems, newItem[0]]
             }
@@ -64,9 +71,31 @@ const cartSlice = createSlice({
     
             state.amount = amount
             state.total = total
+        },
+
+        checkIsLogin: (state) => {
+            if(state.isLogin == true){
+                state.isLogin = false;
+            } else {    
+                state.isLogin = true;
+            }
+            
+        }
+    },
+    extraReducers:{
+        [getAllCandleafs.pending]: (state) => {
+            state.isLoading = true
+        },
+        [getAllCandleafs.fulfilled]: (state, action) => {
+            console.log(action);
+            // state.data = action.payload.drinks
+            state.isLoading = false
+        },
+        [getAllCandleafs.rejected]: (state) => {
+            state.isLoading = true
         }
     }
 })
 
-export const {removeItem, increaseItem, decreaseItem, getTotalAmount, addItem} = cartSlice.actions;
+export const {removeItem, increaseItem, decreaseItem, getTotalAmount, addItem, checkIsLogin} = cartSlice.actions;
 export default cartSlice.reducer

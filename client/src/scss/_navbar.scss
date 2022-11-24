@@ -45,9 +45,27 @@
 
     &__logo-text{
         width: 85.25px;
-        height: 14.61px
+        height: 14.61px;
     }
 
+}
+
+.sign{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    transform: translateX(-80%);
+    width: fit-content;
+    background-color: white;
+    z-index: 1;
+    width: 120px;
+    border: 1px solid rgb(181, 181, 181);
+
+    .link{
+        padding: 5px;
+        display: block;
+    }
 }
 
 @media screen and (min-width: 850px) {
@@ -87,7 +105,7 @@
         font-family: $font-roboto;
         height: auto !important;
         flex: 2;
-
+        width: 100%;
         &__text-links{
             display: flex;
             
@@ -102,7 +120,11 @@
             
             li{
                 cursor: pointer;
-            }         
+            }      
+        }
+
+        &__user-container{
+            position: relative;
         }
 
         &__user-icon{
@@ -170,7 +192,7 @@
         }
 
         &__icons-links{
-            @include flexCenter(end);
+            @include flexCenter();
             
             li{
                 cursor: pointer;
@@ -218,6 +240,15 @@
         &:hover{
             background-color: rgb(151, 255, 173);
             padding-left: 73px;
+        }
+    }
+}
+
+@include mobile(450px){
+    .navbar-links{
+
+        &__user-container{
+            font-size: 11px;
         }
     }
 }
