@@ -16,7 +16,6 @@ app.get("/", (req, res) => {
 })
 
 app.use(express.json())
-app.use(cors())
 app.use("/api/auth", authRouter)
 
 app.use(notFound)
