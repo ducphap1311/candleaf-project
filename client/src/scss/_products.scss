@@ -32,13 +32,13 @@
     max-width: 1111px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     .product{
         box-shadow: 0 0 8px rgb(219, 219, 219);
         text-decoration: none;
         max-width: 255px;
-        margin: 0 auto 20px;
+        margin: 0 20px 20px;
         width: fit-content;
 
         &:hover{
@@ -72,13 +72,13 @@
 
 @include mobile(1200px){
         .products-list{
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
         }
 }
 
 @include mobile(1000px){
         .products-list{
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
 }
 

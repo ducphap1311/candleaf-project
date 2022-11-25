@@ -28,6 +28,7 @@ function App() {
     useEffect(() => {
         dispatch(getAllCandleafs())
     }, [])
+    
     return (
     <Router>
         <ScrollToTop />
