@@ -29,7 +29,7 @@ export const Products = () => {
     }, [searchName, color, sort])
 
     const fetchData = () => {
-        const url = `https://candleafs-api.herokuapp.com/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort} `
+        const url = `http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort} `
         fetch(url)
         .then((response) => response.json())
         .then((data) => {
