@@ -39,12 +39,12 @@ const cartSlice = createSlice({
         },  
         
         removeItem:(state, action) => {
-            state.cartItems = state.cartItems.filter(item => item.id != action.payload)
+            state.cartItems = state.cartItems.filter(item => item._id != action.payload)
         },
         
         decreaseItem:(state, action) => {
             const newItems = state.cartItems.map(item => {
-                if(item.id == action.payload){
+                if(item._id == action.payload){
                     return {...item, amount: item.amount - 1}
                 }
                 return item;
@@ -54,7 +54,7 @@ const cartSlice = createSlice({
 
         increaseItem:(state, action) => {
             const newItems = state.cartItems.map(item => {
-                if(item.id == action.payload){
+                if(item._id == action.payload){
                     return {...item, amount: item.amount + 1}
                 }
                 return item;

@@ -23,21 +23,21 @@ export const CartItems = () => {
                             <h3 className='title__total'>Total</h3>
                         </div>
                         {cartItems.map(item => {
-                        const {id, img, name, price, amount} = item;
-                        return <div key={id} className="item">
+                        const{_id, img, name, price, amount} = item;
+                        return <div key={_id} className="item">
                             <div className="item__info">
                                 <img srcSet={`${img} 4x`} alt="img" className='product__img'/>
                                 <div className='product__info'>
                                     <div>
                                         <h2 className='product__name'>{name} Candleaf®</h2>
-                                        <button className='remove-btn' onClick={() => dispatch(removeItem(id))}>Remove</button>
+                                        <button className='remove-btn' onClick={() => dispatch(removeItem(_id))}>Remove</button>
                                     </div>
                                     <div>
                                         <p className='product__price'>${price}</p>
                                         <div className='product__quantity'>
-                                            <button className='btn increase-btn' onClick={() => dispatch(increaseItem(id))}><i className='fas fa-plus'></i></button>
+                                            <button className='btn increase-btn' onClick={() => dispatch(increaseItem(_id))}><i className='fas fa-plus'></i></button>
                                             <span>{amount}</span>
-                                            <button className='btn decrease-btn' onClick={() => dispatch(decreaseItem(id))}><i className='fas fa-minus'></i></button>
+                                            <button className='btn decrease-btn' onClick={() => dispatch(decreaseItem(_id))}><i className='fas fa-minus'></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -45,9 +45,9 @@ export const CartItems = () => {
                             <p className='item__price'>{price}</p>
                             <div className='item__quantity'>
                                     <div className='quantity-container'>
-                                        <button className='btn increase-btn' onClick={() => dispatch(increaseItem(id))}><i className='fas fa-plus'></i></button>
+                                        <button className='btn increase-btn' onClick={() => dispatch(increaseItem(_id))}><i className='fas fa-plus'></i></button>
                                         <span>{amount}</span>
-                                        <button className='btn decrease-btn' onClick={() => dispatch(decreaseItem(id))}><i className='fas fa-minus'></i></button>
+                                        <button className='btn decrease-btn' onClick={() => dispatch(decreaseItem(_id))}><i className='fas fa-minus'></i></button>
                                     </div>            
                                 </div>
                             <p className='item__total'>${(price*amount).toFixed(2)}</p>

@@ -33,7 +33,8 @@ const getAllCandleafs = async (req, res) => {
 
 const getSingleCandleaf = async(req, res) => {
     console.log('hello');
-    const candleaf = await Candleaf.find({_id: req.params})
+    const {id} = req.params;
+    const candleaf = await Candleaf.findOne({_id: id})
     res.status(200).json({candleaf})
 }
 
