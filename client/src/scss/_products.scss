@@ -177,7 +177,7 @@
     border: 3px solid rgb(0, 0, 0);
 }
 
-@include mobile(1200px){
+@include mobile(1300px){
         .products-list{
             grid-template-columns: 1fr 1fr 1fr;
             justify-content: center;

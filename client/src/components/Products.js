@@ -6,7 +6,6 @@ import { SearchForm } from './SearchForm';
 import e from 'cors';
 
 export const Products = (props) => {
-    console.log(props.popular);
     const [size, setSize] = useState(window.innerWidth);
     // const {data} = useSelector(store => store.cart)
     const [searchName, setSearchName] = useState('')
@@ -32,13 +31,12 @@ export const Products = (props) => {
     }, [searchName, color, sort, active])
 
     const fetchData = () => {
-        const url = `https://candleafs-api-1311.herokuapp.com/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`
+        const url = `http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`
         fetch(url)
         .then((response) => response.json())
         .then((data) => {
             setData(data.candleafs)
         }).catch(error => console.log(error));
-        console.log(data);
     }
 
     const clickColor = (e, type) => {
