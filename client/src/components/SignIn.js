@@ -13,7 +13,7 @@ export const SignIn = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = 'https://candleaf-ecommerce.herokuapp.com/api/auth/login'
+        const url = 'https://candleafs-api-1311.herokuapp.com/api/auth/login'
 
             await fetch(url, {
                 method: "POST",

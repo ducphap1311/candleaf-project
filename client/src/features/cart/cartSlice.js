@@ -11,7 +11,7 @@ const initialState = {
 }
 
 export const getAllCandleafs = createAsyncThunk('card/getAllCarts', () => {
-    const url = 'https://candleaf-ecommerce.herokuapp.com/api/v1/candleafs'
+    const url = 'https://candleafs-api-1311.herokuapp.com/api/v1/candleafs'
     return fetch(url).then((resp) => resp.json()).catch((err) => console.log(err))
 })
 
