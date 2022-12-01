@@ -33,7 +33,6 @@ export const Navbar = () => {
         if(user){
             setUserName(user)
             setOpen(false)
-            // dispatch(checkIsLogin())
         } else {
             setUserName("")
         }
@@ -70,8 +69,8 @@ export const Navbar = () => {
                                     {out && <p onClick={userLogOut}>Log out</p>}
                                     </div> : <img src={userIcon} alt="user" className='navbar-links__user-icon' onClick={() => setOpen(!open)}/>}
                             {open && <div className='sign'>
-                                        <Link to='/signup' className='link' onClick={() => setOpen(false)}>Sign up</Link>
-                                        <Link to='/signin' className='link'>Sign in</Link>
+                                        <Link to='/signup' className='link-sign' onClick={() => setOpen(false)}>Sign up</Link>
+                                        <Link to='/signin' className='link-sign'>Sign in</Link>
                                     </div>}
                             
                         </li>

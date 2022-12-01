@@ -99,6 +99,23 @@
     }
 }
 
+@include mobile(350px){
+    .hero-container{
+
+        .hero-modal{
+
+            &__title{
+                line-height: 48px;
+                margin-bottom: 10px;
+            }
+
+            &__discovery-btn{
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+
 @include mobile(280px){
     .hero-container{
 
@@ -111,6 +128,7 @@
 
             &__discovery-btn{
                 padding: 5px 10px;
+                font-size: 15px;
             }
         }
     }

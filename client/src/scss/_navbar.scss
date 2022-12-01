@@ -153,6 +153,7 @@
     }
 }
 
+
 @include mobile(850px) {
 
     .navbar-container{
@@ -241,6 +242,19 @@
             background-color: rgb(151, 255, 173);
             padding-left: 73px;
         }
+    }
+
+    .sign{
+        position: absolute;
+        top: 50px;
+        right: -10px;
+    }
+
+    .link-sign{
+        text-decoration: none;
+        color: black;
+        font-size: 17px;
+        padding: 5px;
     }
 }
 
