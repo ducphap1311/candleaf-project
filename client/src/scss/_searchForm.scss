@@ -1,63 +1,64 @@
-.content{
-    width: fit-content;
-}
+// .content{
+//     width: fit-content;
+// }
 
-.search-input{
-    width: 100%;
-    padding: 5px;
-    font-size: 17px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(244, 244, 244);
-}
+// .search-input{
+//     width: 100%;
+//     padding: 5px;
+//     font-size: 17px;
+//     border-radius: 5px;
+//     border: none;
+//     background-color: rgb(244, 244, 244);
+// }
 
-.form-control{
-    h5{
-        font-size: 20px;
-        color: rgb(74, 74, 74);
-    }
+// .form-control{
+//     h5{
+//         font-size: 20px;
+//         color: rgb(74, 74, 74);
+//     }
 
-    &__category{
-        display: flex;
-        flex-direction: column;
+//     &__category{
+//         display: flex;
+//         flex-direction: column;
 
-        button{
-            width: fit-content;
-            background-color: white;
-            padding: 5px 5px 5px 0;
-            border-color: transparent;
-            cursor: pointer;
-            border: 1px solid transparent;
-            &:active{
-                border-bottom: 1px solid black;
-            }
-        }
-    }
+//         button{
+//             width: fit-content;
+//             background-color: white;
+//             padding: 5px 5px 5px 0;
+//             border-color: transparent;
+//             cursor: pointer;
+//             border: 1px solid transparent;
+//             &:active{
+//                 border-bottom: 1px solid black;
+//             }
+//         }
+//     }
 
-    &__colors{
-        display: flex;
-        align-items: center;
+//     &__colors{
+//         display: flex;
+//         align-items: center;
 
-        button{
-            margin: 5px;
-            border: 1px solid transparent;
-            cursor: pointer;
-            background-color: transparent;
-            font-size: 17px;
-        }
+//         button{
+//             margin: 5px;
+//             border: 1px solid transparent;
+//             cursor: pointer;
+//             background-color: transparent;
+//             font-size: 17px;
+//         }
 
-        .color-btn{
-            width: 17px;
-            height: 17px;
-            border-radius: 50%;
-        }
-    }
-}
+//         .color-btn{
+//             width: 17px;
+//             height: 17px;
+//             border-radius: 50%;
+//         }
+//     }
+// }
 
-.clear-btn{
-    background-color: red;
-    color: white;
-    padding: 2px 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
+// .clear-btn{
+//     background-color: red;
+//     color: white;
+//     padding: 2px 5px;
+//     font-size: 16px;
+//     cursor: pointer;
+//     margin-left: 150px;
+// }

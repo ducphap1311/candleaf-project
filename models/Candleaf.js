@@ -24,7 +24,11 @@ const candleafSchema = new mongoose.Schema({
     color: {
     type: String,
     required: [true, 'please provide color']
-}
+    },
+    category:{
+        type: String,
+        required: [true, 'please provide category']
+    }
 })
 
 module.exports = mongoose.model('Candleaf', candleafSchema)

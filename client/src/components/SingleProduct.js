@@ -11,7 +11,7 @@ export const SingleProduct = () => {
     const dispatch = useDispatch()
 
     const getSingleItem = () => {
-        fetch(`http://localhost:5000/api/v1/candleafs/`+ id)
+        fetch(`https://candleaf-ecommerce.herokuapp.com/api/v1/candleafs/`+ id)
         .then(res => res.json())
         .then(data => {
             setSingleProduct(data.candleaf)

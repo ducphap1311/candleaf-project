@@ -1,9 +1,12 @@
 const Candleaf = require('../models/Candleaf');
 
 const getAllCandleafs = async (req, res) => {
-    const {name, sort, color, popular} = req.query;
+    const {name, sort, color, popular, category} = req.query;
     const queryObject = {};
 
+    if (category && category!="all") {
+        queryObject.category = category;
+    }
     if (popular) {
         queryObject.popular = popular === 'true' ? true : false;
     }

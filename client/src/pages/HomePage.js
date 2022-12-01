@@ -9,9 +9,9 @@ export const HomePage = () => {
   return (
     <div className='home-page'>
       <Hero />
-      <Products />
+      <Products number={8}/>
       <About />
-      <PopularProducts />
+      <Products popular={true}/>
       <Footer />
     </div>
   )

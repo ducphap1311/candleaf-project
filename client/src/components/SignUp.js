@@ -12,7 +12,7 @@ export const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = 'http://localhost:5000/api/auth/register'
+        const url = 'https://candleaf-ecommerce.herokuapp.com/api/auth/register'
         if(password !== confirmPassword){
             setError(true)
             setSuccess(false)
