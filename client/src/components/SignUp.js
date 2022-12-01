@@ -12,7 +12,7 @@ export const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = 'https://candleafs-api-1311.herokuapp.com/api/auth/register'
+        const url = 'https://candleafs-api.herokuapp.com/api/auth/register'
         if(password !== confirmPassword){
             setError(true)
             setSuccess(false)
