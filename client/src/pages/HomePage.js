@@ -2,7 +2,6 @@ import React from 'react'
 import { About } from '../components/About'
 import { Footer } from '../components/Footer'
 import { Hero } from '../components/Hero'
-import { PopularProducts } from '../components/PopularProducts'
 import { Products } from '../components/Products'
 
 export const HomePage = () => {

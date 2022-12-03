@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import data from '../data/ProductsData'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'

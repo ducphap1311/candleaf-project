@@ -1,52 +1,82 @@
 import React, {useState} from 'react'
-import axios from 'axios'
 import {Link} from 'react-router-dom';
+import {useFormik} from 'formik';
+import { useNavigate } from 'react-router-dom'
+import {checkIsLogin} from '../features/cart/cartSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 export const SignUp = () => {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassWord] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
     const [error, setError] = useState(false)
-    const [success, setSuccess] = useState(false)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const url = 'https://candleafs-api.herokuapp.com/api/auth/register'
-        if(password !== confirmPassword){
-            setError(true)
-            setSuccess(false)
-        } else{
-            await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8",
-                },
-                body: JSON.stringify({name, email, password}),
-            }).then(res => res.json()).then(data => {
-                localStorage.setItem("token", data.token)
-                setSuccess(true)
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        },
+        validate: values => {
+            const errors = {}
+            if(!values.name){
+                errors.name = 'Required'
+            }
+            if(!values.email){
+                errors.email = 'Required'
+            } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
+                errors.email = 'Invalid email address'
+            }
+            if(!values.password){
+                errors.password = 'Required'
+            } else if(values.password.length < 8){
+                errors.password = 'Must be 8 characters or more'
+            }
+            if(!values.confirmPassword){
+                errors.confirmPassword = 'Required'
+            } else if(values.confirmPassword != values.password){
+                errors.confirmPassword = 'Password did not match'
+            }
+            return errors
+        },
+        onSubmit: async (values) => {
+            try {
+                const rawResponse = await fetch('https://candleafs-api.herokuapp.com/api/auth/register', 
+                {
+                    method: 'POST',
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name: values.name, email: values.email, password: values.password})
+                });
+                const content = await rawResponse.json();
+                localStorage.setItem("token", content.token)
+                localStorage.setItem("userName", content.user.name)
                 setError(false)
-            }).catch(err => console.log(err))
+                dispatch(checkIsLogin())
+                navigate("/")
+            } catch (error) {
+                setError(true)
+            }
         }
-            
-        
-    }
+    })
 
     return (
         <div className='sign-up'>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={formik.handleSubmit}>
                 <div className="form-item">
-                    <label htmlFor="userNameSignUp">First and last name</label>
+                    <label htmlFor="name">First and last name</label>
                     <input
                         type="text"
-                        id="userNameSignUp"
-                        name="username"
+                        id="name"
+                        name="name"
                         placeholder="Enter your name"
-                        value={name}
-                        required
-                        onChange={(e) => setName(e.target.value)}
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        onBlur = {formik.handleBlur}
                     ></input>
+                    {formik.errors.name && formik.touched.name ? <p>{formik.errors.name}</p>: null}
                 </div>
 
                 <div className="form-item">
@@ -56,50 +86,42 @@ export const SignUp = () => {
                         id="email"
                         name="email"
                         placeholder="Email@gmail.com"
-                        value={email}
-                        required
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        onBlur = {formik.handleBlur}
                     ></input>
-                    {/* <p className={["error-message"]}>
-                        {formErrors.email}
-                    </p> */}
+                    {formik.errors.email && formik.touched.email ? <p>{formik.errors.email}</p>: null}
                 </div>
 
                 <div className="form-item">
-                    <label htmlFor="passwordSignUp">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input
                         type="password"
-                        id="passwordSignUp"
+                        id="password"
                         name="password"
                         placeholder="********"
-                        value={password}
-                        required
-                        onChange={(e) => setPassWord(e.target.value)}
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                        onBlur = {formik.handleBlur}
                     ></input>
-                    {/* <p className={["error-message"]}>
-                        {formErrors.password}
-                    </p> */}
+                    {formik.errors.password && formik.touched.password ? <p>{formik.errors.password}</p>: null}
                 </div>
 
                 <div className="form-item">
-                    <label htmlFor="confirm">Confirm password</label>
+                    <label htmlFor="confirmPassword">Confirm password</label>
                     <input
                         type="password"
-                        id="confirm"
-                        name="confirm"
-                        value={confirmPassword}
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        value={formik.values.confirmPassword}
                         placeholder="********"
-                        required
-                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        onChange={formik.handleChange}
                     ></input>
-                    {/* <p className="error-message">
-                        {formErrors.confirm}
-                    </p> */}
+                    {formik.errors.confirmPassword ? <p>{formik.errors.confirmPassword}</p>: null}
                 </div>
 
                 <div>
-                    {error ? <p style={{color: "red"}}>Email or Password is wrong</p> : null}
-                    {success ? <p style={{color: "green", marginBottom: "15px"}}>Success create account <Link to='/signin' style={{textDecoration: "none", marginLeft: "10px", color: "black"}}>Sign in</Link></p> : null}
+                    {error ? <p style={{color: "red", marginBottom: '20px', fontSize: '17px'}}>Email was used by other users</p> : null}
                 </div>
 
                 <div className="login">

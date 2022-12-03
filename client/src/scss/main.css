@@ -3530,50 +3530,50 @@
   color: #56B280;
 }
 
-.payment-text__method .credit-card form {
+.payment-text__method .credit-card .form-payment {
   padding: 0 18px 30px 18px;
 }
 
-.payment-text__method .credit-card form input {
+.payment-text__method .credit-card .form-payment input {
   border: 0.5px solid #898989;
   margin-bottom: 12px;
   padding: 7px 17px;
 }
 
-.payment-text__method .credit-card form input::-webkit-input-placeholder {
+.payment-text__method .credit-card .form-payment input::-webkit-input-placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
   color: #616161;
 }
 
-.payment-text__method .credit-card form input:-ms-input-placeholder {
+.payment-text__method .credit-card .form-payment input:-ms-input-placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
   color: #616161;
 }
 
-.payment-text__method .credit-card form input::-ms-input-placeholder {
+.payment-text__method .credit-card .form-payment input::-ms-input-placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
   color: #616161;
 }
 
-.payment-text__method .credit-card form input::placeholder {
+.payment-text__method .credit-card .form-payment input::placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
   color: #616161;
 }
 
-.payment-text__method .credit-card form .card-number-input,
-.payment-text__method .credit-card form .card-name-input {
+.payment-text__method .credit-card .form-payment .card-number-input,
+.payment-text__method .credit-card .form-payment .card-name-input {
   width: 100%;
 }
 
-.payment-text__method .credit-card form .date-input-container {
+.payment-text__method .credit-card .form-payment .date-input-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3582,13 +3582,13 @@
           align-items: center;
 }
 
-.payment-text__method .credit-card form .date-input-container .date-input {
+.payment-text__method .credit-card .form-payment .date-input-container .date-input {
   width: 50%;
   margin-right: 14px;
   margin-bottom: 0;
 }
 
-.payment-text__method .credit-card form .date-input-container .cvv-input {
+.payment-text__method .credit-card .form-payment .date-input-container .cvv-input {
   width: 50%;
   margin-bottom: 0;
 }
@@ -3619,7 +3619,7 @@
   .payment-text__method .credit-card .credit-card-title {
     display: none;
   }
-  .payment-text__method .credit-card form {
+  .payment-text__method .credit-card .form-payment {
     padding: 0;
   }
   .payment-text__shipping-btn {

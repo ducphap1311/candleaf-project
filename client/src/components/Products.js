@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-// import data from '../data/ProductsData' 
 import {useSelector} from 'react-redux'
 import { SearchForm } from './SearchForm';
-import e from 'cors';
 
 export const Products = (props) => {
     const [size, setSize] = useState(window.innerWidth);
@@ -72,9 +70,7 @@ export const Products = (props) => {
                                     <p className='product__price'>{price}$</p>
                                 </Link>
                             })}
-                            </div>:<div>
-                                    {/* <p>Sorry, no products matched your search.</p> */}
-                            </div>}  
+                            </div>: null}  
                     </div>
 
             </div>
@@ -96,9 +92,7 @@ export const Products = (props) => {
                                     <p className='product__price'>{price}$</p>
                                 </Link>
                             })}
-                            </div>:<div>
-                                    {/* <p>Sorry, no products matched your search.</p> */}
-                            </div>}  
+                            </div>:null}  
                     </div>
 
             </div>

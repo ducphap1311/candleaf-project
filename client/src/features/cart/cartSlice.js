@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import data from "../../data/ProductsData";
 
 const initialState = {
     cartItems: [],
@@ -27,6 +26,7 @@ const cartSlice = createSlice({
                     flag = true;
                     return {...item, amount: item.amount + action.payload.amount}
                 }
+
                 return item;
             })
             if(flag){

@@ -2,15 +2,44 @@ import React from 'react'
 import { AuthenticationTitles } from './AuthenticationTitles'
 import creditCardImg from '../images/credit-card.png';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {useFormik} from 'formik'
 
 export const Payment = () => {
     const {cartItems, total} = useSelector(store => store.cart);
+    const navigate = useNavigate()
 
+    const formik = useFormik({
+        initialValues:{
+            cardNumber: '',
+            holderName: '',
+            expiration: '',
+            cvv: ''
+        },
+        validate: values => {
+            const errors = {}
+            if(!values.cardNumber){
+                errors.cardNumber = 'Required'
+            }
+            if(!values.holderName){
+                errors.holderName = 'Required'
+            }
+            if(!values.expiration){
+                errors.expiration = 'Required'
+            }
+            if(!values.cvv){
+                errors.cvv = 'Required'
+            }
+            return errors
+        },
+        onSubmit: values => {
+            navigate('/')
+        }
+    })
     return (
         <div className='payment'>
             <div className='payment-container'>
-                <div className='payment-text'>
+                <form className='payment-text' onSubmit={formik.handleSubmit}>
                     <AuthenticationTitles />
                     <div className='payment-text__method'>
                         <p className='name-method'>Payment method</p>
@@ -19,26 +48,62 @@ export const Payment = () => {
                                 <img srcSet={`${creditCardImg} 4x`} alt='credit-card' />
                                 <p>Credit Card</p>
                             </div>
-                            <form>
-                                <input type="text" placeholder="Card Number" className='card-number-input'/>
-                                <input type="text" placeholder="Holder Name" className='card-name-input'/>
+                            <div className='form-payment'>
+                                <input 
+                                    type="text" 
+                                    id='cardNumber'
+                                    name='cardNumber'
+                                    value={formik.values.cardNumber}
+                                    onChange={formik.handleChange}
+                                    onBlur = {formik.handleBlur}
+                                    placeholder="Card Number" 
+                                    className='card-number-input'/>
+                                {formik.errors.cardNumber && formik.touched.cardNumber ? <p>{formik.errors.cardNumber}</p>: null}
+                                <input 
+                                    type="text" 
+                                    id='holderName'
+                                    name='holderName'
+                                    value={formik.values.holderName}
+                                    onChange={formik.handleChange}
+                                    onBlur = {formik.handleBlur}
+                                    placeholder="Holder Name" 
+                                    className='card-name-input'/>
+                                {formik.errors.holderName && formik.touched.holderName ? <p>{formik.errors.holderName}</p>: null}
                                 <div className='date-input-container'>
-                                    <input type="text" placeholder="Expiration (MM/YY)" className='date-input'/>
-                                    <input type="text" placeholder="CVV" className='cvv-input'/>
+                                    <input 
+                                        type="text" 
+                                        id='expiration'
+                                        name='expiration'
+                                        value={formik.values.expiration}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        placeholder="Expiration (MM/YY)" 
+                                        className='date-input'/>
+                                    {formik.errors.expiration && formik.touched.expiration ? <p>{formik.errors.expiration}</p>: null}
+                                    <input 
+                                        type="text" 
+                                        id='cvv'
+                                        name='cvv'
+                                        value={formik.values.cvv}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        placeholder="CVV" 
+                                        className='cvv-input'/>
+                                    {formik.errors.cvv && formik.touched.cvv ? <p>{formik.errors.cvv}</p>: null}
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div className='payment-text__shipping-btn'>
                         <Link to="/shipping" className='back-to-details-link'>Back to shipping</Link>
-                        <Link to="/payment" className='payment-link'><button>Pay now</button></Link>
+                        <button type='submit' className='payment-link'>Pay now</button>
                         <Link to="/shipping" className='back-to-details-link-r'>Back to shipping</Link>
                     </div>
-                </div>
+                </form>
                 <div className='payment-products'>
                     {cartItems.map(item => {
-                        const {id, img, amount, name, price} = item;
-                        return <div className='product-info' key={id}>
+                        const {_id, img, amount, name, price} = item;
+                        return <div className='product-info' key={_id}>
                                     <div className='product-info__img-amount'>
                                         <img srcSet={`${img} 4x`} alt="img"/>
                                         <p>{amount}</p>
