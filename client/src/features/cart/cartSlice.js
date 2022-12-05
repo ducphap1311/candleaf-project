@@ -10,7 +10,7 @@ const initialState = {
 }
 
 export const getAllCandleafs = createAsyncThunk('card/getAllCarts', () => {
-    const url = 'https://candleafs-api.herokuapp.com/api/v1/candleafs'
+    const url = 'http://localhost:5000/api/v1/candleafs'
     return fetch(url).then((resp) => resp.json()).catch((err) => console.log(err))
 })
 
@@ -29,6 +29,7 @@ const cartSlice = createSlice({
 
                 return item;
             })
+
             if(flag){
                 state.cartItems = items;
             } else {
@@ -36,6 +37,7 @@ const cartSlice = createSlice({
                 newItem[0].amount = action.payload.amount;
                 state.cartItems = [...state.cartItems, newItem[0]]
             }
+            state.cartItems = [...state.cartItems]
         },  
         
         removeItem:(state, action) => {

@@ -22,12 +22,12 @@ app.use('/api/v1/candleafs', candleafsRouter);
 app.use(notFound)
 app.use(errorHandler)
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static("client/build"));
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-    })
-}
+// if(process.env.NODE_ENV === "production"){
+//     app.use(express.static("client/build"));
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+//     })
+// }
 
 const PORT = process.env.PORT || 5000
 

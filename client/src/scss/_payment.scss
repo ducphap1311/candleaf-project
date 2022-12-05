@@ -6,6 +6,11 @@
     @extend .shipping-container;
 }
 
+.error-payment{
+    color: red;
+    margin-bottom: 25px;
+}
+
 .payment-text{
     .authentication-titles{
 

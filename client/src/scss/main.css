@@ -1109,9 +1109,7 @@
           box-shadow: 0 0 8px #dbdbdb;
   text-decoration: none;
   width: 255px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 261,2px;
 }
 
 .products-list .product:hover {
@@ -1381,9 +1379,7 @@
           box-shadow: 0 0 8px #dbdbdb;
   text-decoration: none;
   width: 255px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 261,2px;
 }
 
 .products-list .product:hover {
@@ -2366,6 +2362,11 @@
   padding-top: 75px;
 }
 
+.error-authentication {
+  margin-bottom: 25px;
+  color: red;
+}
+
 .authentication-text__contact {
   margin: 47px 0 40px 165px;
 }
@@ -2475,6 +2476,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .authentication-text__shipping-address .name-input,
@@ -2585,6 +2589,16 @@
   }
   .authentication-text__shipping-btn .back-to-cart-link-r:hover {
     color: #018401;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .authentication-text__contact .authentication-title p {
+    font-size: 15px;
+  }
+  .authentication-text__contact .authentication-title p span {
+    color: #56B280;
+    cursor: pointer;
   }
 }
 
@@ -3482,6 +3496,11 @@
   }
 }
 
+.error-payment {
+  color: red;
+  margin-bottom: 25px;
+}
+
 .payment-text .authentication-titles .details-title,
 .payment-text .authentication-titles .shipping-title {
   color: #56B280;
@@ -3673,6 +3692,24 @@
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  font-size: 16px;
+}
+
+.signup-form {
+  border: 3px solid #56B280;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.error-message {
+  margin-bottom: 10px;
+  color: red;
 }
 
 .success {
@@ -3753,6 +3790,24 @@
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  font-size: 16px;
+}
+
+.signup-form {
+  border: 3px solid #56B280;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.error-message {
+  margin-bottom: 10px;
+  color: red;
 }
 
 .success {
@@ -3833,5 +3888,14 @@
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.signin-form {
+  border: 3px solid #56B280;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 /*# sourceMappingURL=main.css.map */

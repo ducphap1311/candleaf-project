@@ -1,41 +1,37 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {useSelector} from 'react-redux'
-import { SearchForm } from './SearchForm';
+import { useFetch } from './useFetch'
+import {classNames} from 'classnames'
+import {clsx} from 'clsx';
 
 export const Products = (props) => {
-    const [size, setSize] = useState(window.innerWidth);
-    // const {data} = useSelector(store => store.cart)
     const [searchName, setSearchName] = useState('')
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
     const [color, setColor] = useState('all')
     const [sort, setSort] = useState('price')
     const [active, setActive] = useState('all')
     const [colorActive, setColorActive] = useState('all')
+    // const [loading, setLoading] = useState(true)
+    const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`)
 
-    useEffect(() => {
-        const handleResize = () => {
-            setSize(window.innerWidth)
-        }
-        window.addEventListener("resize", handleResize)
+    // useEffect(() => {
+    //     fetchData()
+    // }, [searchName, color, sort, active])
 
-        return () => {
-            window.removeEventListener("resize", handleResize)
-        }
-    }, [size])
-
-    useEffect(() => {
-        fetchData()
-    }, [searchName, color, sort, active])
-
-    const fetchData = () => {
-        const url = `https://candleafs-api.herokuapp.com/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`
-        fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-            setData(data.candleafs)
-        }).catch(error => console.log(error));
-    }
+    // const fetchData = async () => {
+    //     setLoading(true)
+    //     const url = `http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`
+    //     try {
+    //         const response = await fetch(url)
+    //         const data = await response.json()
+    //         setData(data.candleafs)
+    //         setLoading(false)
+    //     } catch (error) {
+    //         console.log(error);
+    //         setLoading(false)
+    //     }
+        
+    // }
 
     const clickColor = (e, type) => {
         e.preventDefault();
@@ -53,16 +49,17 @@ export const Products = (props) => {
 
     const clickSort = (value) => {
         setSort(value)
-    }   
-        if(props.number){
+    }
+
+    if(props.number && data != null){
             return <div>
                 <div className='products-container'>
                     <div className='products-header'>
                         <h1 className='products-header__title'>Products</h1>
                         <p className='products-header__subtitle'>Order it for you or for your beloved ones</p>
                     </div>
-                    {data.length > 0 ? <div className='products-list'>    
-                            {data.map(product => {
+                    {data.candleafs.length > 0 ? <div className='products-list'>    
+                            {data.candleafs.map(product => {
                                 const {_id, img, name, price} = product
                                 return <Link to={`/singleproduct/${_id}`} className='product' key={_id}>
                                     <img srcSet = {`${img} 4x`} alt={name} className='product__img'/>
@@ -75,16 +72,15 @@ export const Products = (props) => {
 
             </div>
         }
-
-        if(props.popular){
+        else if(props.popular && data != null){
             return <div>
                 <div className='products-container'>
                     <div className='products-header'>
                         <h1 className='products-header__title'>Popular</h1>
                         <p className='products-header__subtitle'>Our top selling product that you may like</p>
                     </div>
-                    {data.length > 0 ? <div className='products-list'>    
-                            {data.map(product => {
+                    {data.candleafs.length > 0 ? <div className='products-list'>    
+                            {data.candleafs.map(product => {
                                 const {_id, img, name, price} = product
                                 return <Link to={`/singleproduct/${_id}`} className='product' key={_id}>
                                     <img srcSet = {`${img} 4x`} alt={name} className='product__img'/>
@@ -94,10 +90,9 @@ export const Products = (props) => {
                             })}
                             </div>:null}  
                     </div>
-
             </div>
-        }
-
+        } else
+    
         return (
             <div className='products'>
                 <div className='products-container'>
@@ -146,8 +141,9 @@ export const Products = (props) => {
                                 </select>
                             </form>
                         </div>
-                    {data.length > 0 ? <div className='products-list'>    
-                            {data.map(product => {
+                    {!loading ? <div>
+                        {data.candleafs.length > 0 ? <div className='products-list'>    
+                            {data.candleafs.map(product => {
                                 const {_id, img, name, price} = product
                                 return <Link to={`/singleproduct/${_id}`} className='product' key={_id}>
                                     <img srcSet = {`${img} 4x`} alt={name} className='product__img'/>
@@ -156,8 +152,9 @@ export const Products = (props) => {
                                 </Link>
                             })}
                             </div>:<div>
-                                    <p>Sorry, no products matched your search.</p>
-                            </div>}  
+                                    <p style={{paddingLeft: '15px'}}>Sorry, no products matched your search.</p>
+                            </div>}
+                    </div>: <p style={{paddingLeft: '15px'}}>Loading...</p>}
                     </div>
 
                 </div>

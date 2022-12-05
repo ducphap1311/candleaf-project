@@ -7,7 +7,7 @@ const getAllCandleafs = async (req, res) => {
     if (category && category!="all") {
         queryObject.category = category;
     }
-    if (popular != 'undefined') {
+    if (popular != 'undefined' && popular) {
         queryObject.popular = popular === 'true' ? true : false;
     }
     if (color && color != 'all') {

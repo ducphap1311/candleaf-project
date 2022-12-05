@@ -43,8 +43,8 @@ export const Shipping = () => {
                 </div>
                 <div className='shipping-products'>
                     {cartItems.map(item => {
-                        const {id, img, amount, name, price} = item;
-                        return <div className='product-info' key={id}>
+                        const {_id, img, amount, name, price} = item;
+                        return <div className='product-info' key={_id}>
                                     <div className='product-info__img-amount'>
                                         <img srcSet={`${img} 4x`} alt="img"/>
                                         <p>{amount}</p>

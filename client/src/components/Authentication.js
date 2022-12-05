@@ -75,7 +75,7 @@ export const Authentication = () => {
                                 onBlur = {formik.handleBlur} 
                                 placeholder='Mobile phone number' 
                                 className='text-input' />
-                            {formik.errors.phone && formik.touched.phone ? <p>{formik.errors.phone}</p>: null}
+                            {formik.errors.phone && formik.touched.phone ? <p className='error-authentication'>{formik.errors.phone}</p>: null}
                             <input type="checkbox" name="10% discount" className='checkbox-input' />
                             <label htmlFor="10% discount">Add me to Candleaf newsletter for a 10% discount</label>
                         </div>
@@ -93,7 +93,7 @@ export const Authentication = () => {
                                     onChange={formik.handleChange}
                                     onBlur = {formik.handleBlur}
                                     className='name-input'/>
-                                {formik.errors.name && formik.touched.name ? <p>{formik.errors.name}</p>: null}
+                                {formik.errors.name && formik.touched.name ? <p className='error-authentication'>{formik.errors.name}</p>: null}
                                 <input 
                                     type="text" 
                                     id='secondName'
@@ -103,7 +103,7 @@ export const Authentication = () => {
                                     onBlur = {formik.handleBlur}
                                     placeholder='Second Name' 
                                     className='second-name-input'/>
-                                {formik.errors.secondName && formik.touched.secondName ? <p>{formik.errors.secondName}</p>: null}
+                                {formik.errors.secondName && formik.touched.secondName ? <p className='error-authentication'>{formik.errors.secondName}</p>: null}
                             </div>
                             <input 
                                 type="text" 
@@ -114,7 +114,7 @@ export const Authentication = () => {
                                 onBlur = {formik.handleBlur}
                                 placeholder='Address and number' 
                                 className='address-num-input'/>
-                            {formik.errors.address && formik.touched.address ? <p>{formik.errors.address}</p>: null}
+                            {formik.errors.address && formik.touched.address ? <p className='error-authentication'>{formik.errors.address}</p>: null}
                             <input 
                                 type="text" 
                                 id='shippingNote'
@@ -124,7 +124,7 @@ export const Authentication = () => {
                                 onBlur = {formik.handleBlur}
                                 placeholder='Shipping note (optional)' 
                                 className='shipping-note-input'/>
-                                {formik.errors.shippingNote && formik.touched.shippingNote ? <p>{formik.errors.shippingNote}</p>: null}
+                                {formik.errors.shippingNote && formik.touched.shippingNote ? <p className='error-authentication'>{formik.errors.shippingNote}</p>: null}
                             <div className='address'>
                                 <input 
                                     type="text" 
@@ -135,7 +135,7 @@ export const Authentication = () => {
                                     onBlur = {formik.handleBlur}
                                     placeholder='City' 
                                     className='city-input'/>
-                                {formik.errors.city && formik.touched.city ? <p>{formik.errors.city}</p>: null}
+                                {formik.errors.city && formik.touched.city ? <p className='error-authentication'>{formik.errors.city}</p>: null}
                                 <input 
                                     type="text" 
                                     id='postalCode'
@@ -145,7 +145,7 @@ export const Authentication = () => {
                                     onBlur = {formik.handleBlur}
                                     placeholder='Postal Code' 
                                     className='province-input'/>
-                                {formik.errors.postalCode && formik.touched.postalCode ? <p>{formik.errors.postalCode}</p>: null}
+                                {formik.errors.postalCode && formik.touched.postalCode ? <p className='error-authentication'>{formik.errors.postalCode}</p>: null}
                                 <input 
                                     type="text" 
                                     id='province'
@@ -155,7 +155,7 @@ export const Authentication = () => {
                                     onBlur = {formik.handleBlur}
                                     placeholder='Province' 
                                     className='code-input'/>
-                                {formik.errors.province && formik.touched.province ? <p>{formik.errors.province}</p>: null}
+                                {formik.errors.province && formik.touched.province ? <p className='error-authentication'>{formik.errors.province}</p>: null}
                                 
                             </div>
                             <input 
@@ -167,7 +167,7 @@ export const Authentication = () => {
                                 onBlur = {formik.handleBlur}
                                 placeholder='Country Region' 
                                 className='country-input'/>
-                            {formik.errors.country && formik.touched.country ? <p>{formik.errors.country}</p>: null}
+                            {formik.errors.country && formik.touched.country ? <p className='error-authentication'>{formik.errors.country}</p>: null}
                             <input type="checkbox" className='save-checkbox' name="save"/>
                             <label htmlFor="save">Save this informations for a future fast checkout</label>
                         </div>
@@ -180,8 +180,8 @@ export const Authentication = () => {
                 </form>
                 <div className='authentication-product'>
                     {cartItems.map(item => {
-                        const {id, img, amount, name, price} = item;
-                        return <div className='product-info' key={id}>
+                        const {_id, img, amount, name, price} = item;
+                        return <div className='product-info' key={_id}>
                                     <div className='product-info__img-amount'>
                                         <img srcSet={`${img} 4x`} alt="img"/>
                                         <p>{amount}</p>

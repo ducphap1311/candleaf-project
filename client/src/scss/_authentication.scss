@@ -8,6 +8,11 @@
     padding-top: 75px;
 }
 
+.error-authentication{
+    margin-bottom: 25px;
+    color: red;
+}
+
 .authentication-text{
 
     &__contact{
@@ -76,6 +81,7 @@
         .name{
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .name-input,
@@ -227,6 +233,27 @@
                     color: rgb(1, 132, 1);
                 }
             }
+        }
+    }
+}
+
+@include mobile(350px){
+    .authentication-text{
+
+        &__contact{
+    
+            .authentication-title{
+
+                p{
+                    font-size: 15px;
+
+                    span{
+                        color: $primary-color;
+                        cursor: pointer;
+                    }
+                }
+            }
+
         }
     }
 }

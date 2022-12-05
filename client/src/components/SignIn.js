@@ -33,12 +33,12 @@ export const SignIn = () => {
         },
         onSubmit: async (values) => {
             try {
-                const rawResponse = await fetch('https://candleafs-api.herokuapp.com/api/auth/login', 
+                const rawResponse = await fetch('http://localhost:5000/api/auth/login', 
                 {
                     method: 'POST',
                     headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({email: values.email, password: values.password})
                 });
@@ -56,7 +56,7 @@ export const SignIn = () => {
 
     return (
         <div className='sign-in'>
-            <form onSubmit={formik.handleSubmit}>
+            <form className='signin-form' onSubmit={formik.handleSubmit}>
                 <div className="form-item">
                     <label htmlFor="email">Email</label>
                     <input
@@ -68,7 +68,7 @@ export const SignIn = () => {
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
                     ></input>
-                    {formik.errors.email && formik.touched.email ? <p>{formik.errors.email}</p>: null}
+                    {formik.errors.email && formik.touched.email ? <p className='error-message'>{formik.errors.email}</p>: null}
 
                 </div>
 
@@ -83,7 +83,7 @@ export const SignIn = () => {
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
                     ></input>
-                    {formik.errors.password && formik.touched.password ? <p>{formik.errors.password}</p>: null}
+                    {formik.errors.password && formik.touched.password ? <p className='error-message'>{formik.errors.password}</p>: null}
                 </div>
 
                 <div>

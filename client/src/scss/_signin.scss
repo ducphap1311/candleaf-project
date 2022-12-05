@@ -5,4 +5,11 @@
     display: flex;
     justify-content: center;
     height: 100%;
+    font-family: $font-poppins;
+}
+
+.signin-form{
+    border: 3px solid $primary-color;
+    padding: 10px;
+    height: fit-content;
 }

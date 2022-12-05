@@ -2,26 +2,34 @@ import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
+import { useFetch } from './useFetch'
 
 export const SingleProduct = () => {
     const { id } = useParams();
-    const [singleProduct, setSingleProduct] = useState({})
-    const [amount, setAmount] = useState(1);
+    // const [singleProduct, setSingleProduct] = useState({})
+    const [amount, setAmount] = useState(1);    
     const dispatch = useDispatch()
+    // const [loading, setLoading] = useState(true)
+    const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs/`+ id)
 
-    const getSingleItem = () => {
-        fetch(`https://candleaf-ecommerce.herokuapp.com/api/v1/candleafs/`+ id)
-        .then(res => res.json())
-        .then(data => {
-            setSingleProduct(data.candleaf)
-        })
-        .catch(err => console.log(err))
-        
-    }
+    // console.log(datas, loadings);
+    // const getSingleItem = async () => {
+    //     setLoading(true)
+    //     try {
+    //         const response = await fetch(`http://localhost:5000/api/v1/candleafs/`+ id)
+    //         const data = await response.json()
+    //         const {candleaf} = data
+    //         setSingleProduct(candleaf)
+    //         setLoading(false)
+    //     } catch (error) {
+    //         console.log(error);
+    //         setLoading(false)
+    //     }
+    // }
 
-    useEffect(() => {
-        getSingleItem();
-    }, [])
+    // useEffect(() => {
+    //     getSingleItem();
+    // }, [])
 
     const increaseAmount = () => {
         setAmount(amount + 1) ;
@@ -34,13 +42,13 @@ export const SingleProduct = () => {
             setAmount(amount - 1)
         }
     }
-    const {img, name, price} = singleProduct;
 
-    if(!singleProduct){
-        return <div>
-            Loading...
+    if(loading){
+        return <div style={{}}>
+            <h1 style={{textAlign: 'center', marginTop: '100px', marginBottom: '600px'}}>Loading...</h1>
         </div>
     } else {
+        const {img, name, price} = data.candleaf;
         return (
             <div className='single-product'>
                 <div className='single-product-container'>
@@ -80,7 +88,9 @@ export const SingleProduct = () => {
                                     
                                     <p className='subscribe-text'>Subscribe now and get the 10% of discount on every recurring order.  The discount will be applied at checkout. <span>See details</span></p>
                                 </div>
-                                <button className='single-product-info__add-btn' onClick={() => dispatch(addItem({id, amount}))}>
+                                <button className='single-product-info__add-btn' onClick={() => {
+                                    dispatch(addItem({id, amount}))
+                                }}>
                                     <i className="fas fa-shopping-cart"></i>+ Add to cart   
                                 </button>
                             </div>

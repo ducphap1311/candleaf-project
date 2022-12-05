@@ -4,6 +4,7 @@ import {useFormik} from 'formik';
 import { useNavigate } from 'react-router-dom'
 import {checkIsLogin} from '../features/cart/cartSlice'
 import { useSelector, useDispatch } from 'react-redux'
+import * as Yup from 'yup';
 
 export const SignUp = () => {
     const [error, setError] = useState(false)
@@ -21,6 +22,8 @@ export const SignUp = () => {
             const errors = {}
             if(!values.name){
                 errors.name = 'Required'
+            } else  if(values.name.length > 8){
+                errors.name = 'Must be 8 characters or less'
             }
             if(!values.email){
                 errors.email = 'Required'
@@ -41,7 +44,7 @@ export const SignUp = () => {
         },
         onSubmit: async (values) => {
             try {
-                const rawResponse = await fetch('https://candleafs-api.herokuapp.com/api/auth/register', 
+                const rawResponse = await fetch('http://localhost:5000/api/auth/register', 
                 {
                     method: 'POST',
                     headers: {
@@ -64,7 +67,7 @@ export const SignUp = () => {
 
     return (
         <div className='sign-up'>
-            <form onSubmit={formik.handleSubmit}>
+            <form onSubmit={formik.handleSubmit} className='signup-form'>
                 <div className="form-item">
                     <label htmlFor="name">First and last name</label>
                     <input
@@ -76,7 +79,7 @@ export const SignUp = () => {
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
                     ></input>
-                    {formik.errors.name && formik.touched.name ? <p>{formik.errors.name}</p>: null}
+                    {formik.errors.name && formik.touched.name ? <p className='error-message'>{formik.errors.name}</p>: null}
                 </div>
 
                 <div className="form-item">
@@ -90,7 +93,7 @@ export const SignUp = () => {
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
                     ></input>
-                    {formik.errors.email && formik.touched.email ? <p>{formik.errors.email}</p>: null}
+                    {formik.errors.email && formik.touched.email ? <p className='error-message'>{formik.errors.email}</p>: null}
                 </div>
 
                 <div className="form-item">
@@ -104,7 +107,7 @@ export const SignUp = () => {
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
                     ></input>
-                    {formik.errors.password && formik.touched.password ? <p>{formik.errors.password}</p>: null}
+                    {formik.errors.password && formik.touched.password ? <p className='error-message'>{formik.errors.password}</p>: null}
                 </div>
 
                 <div className="form-item">
@@ -116,8 +119,9 @@ export const SignUp = () => {
                         value={formik.values.confirmPassword}
                         placeholder="********"
                         onChange={formik.handleChange}
+                        onBlur = {formik.handleBlur}
                     ></input>
-                    {formik.errors.confirmPassword ? <p>{formik.errors.confirmPassword}</p>: null}
+                    {formik.errors.confirmPassword && formik.touched.confirmPassword ? <p className='error-message'>{formik.errors.confirmPassword}</p>: null}
                 </div>
 
                 <div>

@@ -5,12 +5,23 @@
     display: flex;
     justify-content: center;
     height: 100%;
+    font-family: $font-poppins;
 }
 
-// form{
-//     border: 3px solid $primary-color;
-//     padding: 10px;
-// }
+input{
+    font-size: 16px;
+}
+
+.signup-form{
+    border: 3px solid $primary-color;
+    padding: 10px;
+    height: fit-content;
+}
+
+.error-message{
+    margin-bottom: 10px;
+    color: red;
+}
 
 .success {
     color: green;

@@ -58,7 +58,7 @@ export const Payment = () => {
                                     onBlur = {formik.handleBlur}
                                     placeholder="Card Number" 
                                     className='card-number-input'/>
-                                {formik.errors.cardNumber && formik.touched.cardNumber ? <p>{formik.errors.cardNumber}</p>: null}
+                                {formik.errors.cardNumber && formik.touched.cardNumber ? <p className='error-payment'>{formik.errors.cardNumber}</p>: null}
                                 <input 
                                     type="text" 
                                     id='holderName'
@@ -68,7 +68,7 @@ export const Payment = () => {
                                     onBlur = {formik.handleBlur}
                                     placeholder="Holder Name" 
                                     className='card-name-input'/>
-                                {formik.errors.holderName && formik.touched.holderName ? <p>{formik.errors.holderName}</p>: null}
+                                {formik.errors.holderName && formik.touched.holderName ? <p className='error-payment'>{formik.errors.holderName}</p>: null}
                                 <div className='date-input-container'>
                                     <input 
                                         type="text" 
@@ -79,7 +79,7 @@ export const Payment = () => {
                                         onBlur = {formik.handleBlur}
                                         placeholder="Expiration (MM/YY)" 
                                         className='date-input'/>
-                                    {formik.errors.expiration && formik.touched.expiration ? <p>{formik.errors.expiration}</p>: null}
+                                    {formik.errors.expiration && formik.touched.expiration ? <p className='error-payment'>{formik.errors.expiration}</p>: null}
                                     <input 
                                         type="text" 
                                         id='cvv'
@@ -89,7 +89,7 @@ export const Payment = () => {
                                         onBlur = {formik.handleBlur}
                                         placeholder="CVV" 
                                         className='cvv-input'/>
-                                    {formik.errors.cvv && formik.touched.cvv ? <p>{formik.errors.cvv}</p>: null}
+                                    {formik.errors.cvv && formik.touched.cvv ? <p className='error-payment'>{formik.errors.cvv}</p>: null}
                                 </div>
                             </div>
                         </div>
