@@ -22,7 +22,7 @@ const cartSlice = createSlice({
         addItem: (state, action) => {
             let flag = false;  
             const items = state.cartItems.map(item => {
-                if(item._id == action.payload.id){
+                if(item._id === action.payload.id){
                     flag = true;
                     return {...item, amount: item.amount + action.payload.amount}
                 }
@@ -33,7 +33,7 @@ const cartSlice = createSlice({
             if(flag){
                 state.cartItems = items;
             } else {
-                const newItem = state.data.filter(item => item._id == action.payload.id)
+                const newItem = state.data.filter(item => item._id === action.payload.id)
                 newItem[0].amount = action.payload.amount;
                 state.cartItems = [...state.cartItems, newItem[0]]
             }
@@ -41,12 +41,12 @@ const cartSlice = createSlice({
         },  
         
         removeItem:(state, action) => {
-            state.cartItems = state.cartItems.filter(item => item._id != action.payload)
+            state.cartItems = state.cartItems.filter(item => item._id !== action.payload)
         },
         
         decreaseItem:(state, action) => {
             const newItems = state.cartItems.map(item => {
-                if(item._id == action.payload){
+                if(item._id === action.payload){
                     return {...item, amount: item.amount - 1}
                 }
                 return item;
@@ -56,7 +56,7 @@ const cartSlice = createSlice({
 
         increaseItem:(state, action) => {
             const newItems = state.cartItems.map(item => {
-                if(item._id == action.payload){
+                if(item._id === action.payload){
                     return {...item, amount: item.amount + 1}
                 }
                 return item;
@@ -76,7 +76,7 @@ const cartSlice = createSlice({
         },
 
         checkIsLogin: (state) => {
-            if(state.isLogin == true){
+            if(state.isLogin === true){
                 state.isLogin = false;
             } else {    
                 state.isLogin = true;

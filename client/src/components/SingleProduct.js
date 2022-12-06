@@ -1,35 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
-import { useFetch } from './useFetch'
+import { useFetch } from './Custom hooks/useFetch'
 
 export const SingleProduct = () => {
     const { id } = useParams();
-    // const [singleProduct, setSingleProduct] = useState({})
     const [amount, setAmount] = useState(1);    
     const dispatch = useDispatch()
-    // const [loading, setLoading] = useState(true)
     const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs/`+ id)
-
-    // console.log(datas, loadings);
-    // const getSingleItem = async () => {
-    //     setLoading(true)
-    //     try {
-    //         const response = await fetch(`http://localhost:5000/api/v1/candleafs/`+ id)
-    //         const data = await response.json()
-    //         const {candleaf} = data
-    //         setSingleProduct(candleaf)
-    //         setLoading(false)
-    //     } catch (error) {
-    //         console.log(error);
-    //         setLoading(false)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getSingleItem();
-    // }, [])
 
     const increaseAmount = () => {
         setAmount(amount + 1) ;

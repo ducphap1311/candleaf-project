@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom';
 import {useFormik} from 'formik';
 import { useNavigate } from 'react-router-dom'
 import {checkIsLogin} from '../features/cart/cartSlice'
-import { useSelector, useDispatch } from 'react-redux'
-import * as Yup from 'yup';
+import { useDispatch } from 'react-redux'
 
 export const SignUp = () => {
     const [error, setError] = useState(false)
@@ -37,7 +35,7 @@ export const SignUp = () => {
             }
             if(!values.confirmPassword){
                 errors.confirmPassword = 'Required'
-            } else if(values.confirmPassword != values.password){
+            } else if(values.confirmPassword !== values.password){
                 errors.confirmPassword = 'Password did not match'
             }
             return errors

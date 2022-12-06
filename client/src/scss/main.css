@@ -1064,7 +1064,7 @@
   }
 }
 
-.products-container, .popular-products-container {
+.products-container {
   max-width: 1440px;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
@@ -1291,7 +1291,7 @@
 }
 
 @media screen and (max-width: 570px) {
-  .products-container, .popular-products-container {
+  .products-container {
     padding: 50px 0 163px;
   }
   .products-list {
@@ -1312,29 +1312,12 @@
   }
 }
 
-.products-list {
-  text-decoration: none;
+.popular-products .products-container {
+  padding: 83px 0 70px;
+  min-height: initial;
 }
 
-.products-list .product {
-  text-decoration: none;
-}
-
-.products-list .more-products-btn {
-  font-family: "Roboto", sans-serif;
-  background: #56B280;
-  border-radius: 4px;
-  font-size: 20.6452px;
-  color: white;
-  border: none;
-  display: block;
-  margin: auto;
-  padding: 8px 44px;
-  text-decoration: none;
-  margin-top: 44px;
-}
-
-.products-container, .popular-products-container {
+.products-container {
   max-width: 1440px;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
@@ -1561,7 +1544,7 @@
 }
 
 @media screen and (max-width: 570px) {
-  .products-container, .popular-products-container {
+  .products-container {
     padding: 50px 0 163px;
   }
   .products-list {

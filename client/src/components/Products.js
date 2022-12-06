@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import { useFetch } from './useFetch'
+import { useFetch } from './Custom hooks/useFetch'
 
 export const Products = (props) => {
     const [searchName, setSearchName] = useState('')
@@ -9,25 +9,6 @@ export const Products = (props) => {
     const [active, setActive] = useState('all')
     const [colorActive, setColorActive] = useState('all')
     const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`)
-
-    // useEffect(() => {
-    //     fetchData()
-    // }, [searchName, color, sort, active])
-
-    // const fetchData = async () => {
-    //     setLoading(true)
-    //     const url = `http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`
-    //     try {
-    //         const response = await fetch(url)
-    //         const data = await response.json()
-    //         setData(data.candleafs)
-    //         setLoading(false)
-    //     } catch (error) {
-    //         console.log(error);
-    //         setLoading(false)
-    //     }
-        
-    // }
 
     const clickColor = (e, type) => {
         e.preventDefault();
@@ -47,7 +28,7 @@ export const Products = (props) => {
         setSort(value)
     }
 
-    if(props.number && data != null){
+    if(props.number && data !== null){
             return <div>
                 <div className='products-container'>
                     <div className='products-header'>
@@ -69,7 +50,7 @@ export const Products = (props) => {
             </div>
         }
         else if(props.popular && data != null){
-            return <div>
+            return <div className='popular-products'>
                 <div className='products-container'>
                     <div className='products-header'>
                         <h1 className='products-header__title'>Popular</h1>
@@ -105,24 +86,24 @@ export const Products = (props) => {
                                 <div className="form-control">
                                     <h5>Category</h5>
                                     <div className='form-control__category'>
-                                        <button type="button" id="all" className={`${active == 'all' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('all')}>All</button>
-                                        <button type="button" id="office" className={`${active == 'office' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('office')}>Office</button>
-                                        <button type="button" id="living-room" className={`${active == 'lr' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('lr')}>Living room</button>
-                                        <button type="button" id="bedroom" className={`${active == 'bedroom' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('bedroom')}>Bedroom</button>
+                                        <button type="button" id="all" className={`${active === 'all' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('all')}>All</button>
+                                        <button type="button" id="office" className={`${active === 'office' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('office')}>Office</button>
+                                        <button type="button" id="living-room" className={`${active === 'lr' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('lr')}>Living room</button>
+                                        <button type="button" id="bedroom" className={`${active === 'bedroom' ? 'cate-active': 'null'} cate-btn`} onClick={() => setActive('bedroom')}>Bedroom</button>
                                     </div>
                                 </div>
                                 <div className="form-control">
                                     <h5>Colors</h5>
                                     <div className="form-control__colors">
-                                        <button className={`${colorActive == 'all' ? 'color-active': 'null'} all-btn`} onClick={(e) => clickColor(e, 'all')}>All</button>
-                                        <button className={`${colorActive == 'green' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "green"}} onClick={(e) => clickColor(e, 'green')}></button>
-                                        <button className={`${colorActive == 'pink' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "pink"}} onClick={(e) => clickColor(e, 'pink')}></button>
-                                        <button className={`${colorActive == 'orange' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "orange"}} onClick={(e) => clickColor(e, 'orange')}></button>
-                                        <button className={`${colorActive == 'yellow' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "yellow"}} onClick={(e) => clickColor(e, 'yellow')}></button>
-                                        <button className={`${colorActive == 'red' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "red"}} onClick={(e) => clickColor(e, 'red')}></button>
-                                        <button className={`${colorActive == 'brown' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "brown"}} onClick={(e) => clickColor(e, 'brown')}></button>
-                                        <button className={`${colorActive == 'purple' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "purple"}} onClick={(e) => clickColor(e, 'purple')}></button>
-                                        <button className={`${colorActive == 'blue' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "blue"}} onClick={(e) => clickColor(e, 'blue')}></button>
+                                        <button className={`${colorActive === 'all' ? 'color-active': 'null'} all-btn`} onClick={(e) => clickColor(e, 'all')}>All</button>
+                                        <button className={`${colorActive === 'green' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "green"}} onClick={(e) => clickColor(e, 'green')}></button>
+                                        <button className={`${colorActive === 'pink' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "pink"}} onClick={(e) => clickColor(e, 'pink')}></button>
+                                        <button className={`${colorActive === 'orange' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "orange"}} onClick={(e) => clickColor(e, 'orange')}></button>
+                                        <button className={`${colorActive === 'yellow' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "yellow"}} onClick={(e) => clickColor(e, 'yellow')}></button>
+                                        <button className={`${colorActive === 'red' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "red"}} onClick={(e) => clickColor(e, 'red')}></button>
+                                        <button className={`${colorActive === 'brown' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "brown"}} onClick={(e) => clickColor(e, 'brown')}></button>
+                                        <button className={`${colorActive === 'purple' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "purple"}} onClick={(e) => clickColor(e, 'purple')}></button>
+                                        <button className={`${colorActive === 'blue' ? 'color-active': 'null'} color-btn`} style={{backgroundColor: "blue"}} onClick={(e) => clickColor(e, 'blue')}></button>
                                     </div>
                                 </div>
                             </form>

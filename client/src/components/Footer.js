@@ -11,8 +11,8 @@ export const Footer = () => {
                 <div className='footer-info'>
                     <div className='footer-header'>
                         <div className='footer-header__logo'>
-                            <img src={footerImg} alt="footer-logo" className='footer-header__img'/>
-                            <img srcSet={`${footerText} 4x`} className='footer-header__title'></img>
+                            <img src={footerImg} alt="footer-logo" className='footer-header__img' />
+                            <img srcSet={`${footerText} 4x`} className='footer-header__title' alt='title'></img>
                         </div>
                         <p className='footer-header__subtitle'>Your natural candle made for your home and for your wellness.</p>
                     </div>
