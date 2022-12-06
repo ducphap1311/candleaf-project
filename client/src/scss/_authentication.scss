@@ -134,7 +134,15 @@
 
         .shipping-link{
             
-            @extend .payment-link;
+            width: 222px;
+            height: 40px;
+            background: #56B280;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 20.6452px;
+            color: white;
+            cursor: pointer;
+            border-color: transparent;
         }
     }
 }
@@ -219,6 +227,7 @@
 
             .shipping-link{
                 margin-bottom: 25px;
+                width: 100%;
             }
 
             .back-to-cart-link-r{

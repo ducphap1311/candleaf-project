@@ -1,17 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useFetch } from './useFetch'
-import {classNames} from 'classnames'
-import {clsx} from 'clsx';
 
 export const Products = (props) => {
     const [searchName, setSearchName] = useState('')
-    // const [data, setData] = useState([])
     const [color, setColor] = useState('all')
     const [sort, setSort] = useState('price')
     const [active, setActive] = useState('all')
     const [colorActive, setColorActive] = useState('all')
-    // const [loading, setLoading] = useState(true)
     const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`)
 
     // useEffect(() => {
