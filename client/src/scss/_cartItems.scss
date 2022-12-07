@@ -350,16 +350,21 @@
 .empty-cart{
 
     text-align: center;
-    margin-bottom: 200px;
+    height: 70vh;
 
-    h1{
-        margin: 100px 0 20px;
+    p{
+        margin: 250px 0 20px;
         font-family: $font-poppins;
+        font-size: 25px;
+        font-weight: bold;
+        color: #474747;
     }
 
     .fill-link{
         background-color: $primary-color;
         border: 1px solid $primary-color;
+        font-family: $font-poppins;
+        letter-spacing: 1px;
         text-decoration: none;
         color:#ffffff;
         cursor: pointer;

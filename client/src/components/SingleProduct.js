@@ -9,7 +9,6 @@ export const SingleProduct = () => {
     const [amount, setAmount] = useState(1);    
     const dispatch = useDispatch()
     const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs/`+ id)
-
     const increaseAmount = () => {
         setAmount(amount + 1) ;
     }
@@ -24,7 +23,7 @@ export const SingleProduct = () => {
 
     if(loading){
         return <div style={{}}>
-            <h1 style={{textAlign: 'center', marginTop: '100px', marginBottom: '600px'}}>Loading...</h1>
+            <p style={{textAlign: 'center', marginTop: '100px', marginBottom: '600px', fontFamily: 'sans-serif', color: '#474747', fontSize: '30px', fontWeight: "bold"}}>Loading...</p>
         </div>
     } else {
         const {img, name, price} = data.candleaf;

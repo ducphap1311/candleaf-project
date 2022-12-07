@@ -66,7 +66,7 @@ export const CartItems = () => {
         )
     } else {
         return <div className='empty-cart'>
-                <h1>Your cart is empty</h1>
+                <p>Your cart is empty</p>
                 <Link to='/products' className='fill-link'>Fill it</Link>
             </div>
     }

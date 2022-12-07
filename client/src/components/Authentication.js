@@ -84,90 +84,108 @@ export const Authentication = () => {
                         <h2>Shipping Address</h2>
                         <div>
                             <div className='name'>
-                                <input 
-                                    type="text" 
-                                    id='name' 
-                                    name='name' 
-                                    placeholder='Name' 
-                                    value={formik.values.name}
-                                    onChange={formik.handleChange}
-                                    onBlur = {formik.handleBlur}
-                                    className='name-input'/>
-                                {formik.errors.name && formik.touched.name ? <p className='error-authentication'>{formik.errors.name}</p>: null}
-                                <input 
-                                    type="text" 
-                                    id='secondName'
-                                    name='secondName'
-                                    value={formik.values.secondName}
-                                    onChange={formik.handleChange}
-                                    onBlur = {formik.handleBlur}
-                                    placeholder='Second Name' 
-                                    className='second-name-input'/>
-                                {formik.errors.secondName && formik.touched.secondName ? <p className='error-authentication'>{formik.errors.secondName}</p>: null}
+                                <div style={{marginBottom: "12px"}}>
+                                    <input 
+                                        type="text" 
+                                        id='name' 
+                                        name='name' 
+                                        placeholder='Name' 
+                                        value={formik.values.name}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        className='name-input'/>
+                                    {formik.errors.name && formik.touched.name ? <p className='error-authentication'>{formik.errors.name}</p>: null}
+                                </div >
+                                    <div style={{marginBottom: "12px"}}>
+                                        <input 
+                                            type="text" 
+                                            id='secondName'
+                                            name='secondName'
+                                            value={formik.values.secondName}
+                                            onChange={formik.handleChange}
+                                            onBlur = {formik.handleBlur}
+                                            placeholder='Second Name' 
+                                            className='second-name-input'/>
+                                        {formik.errors.secondName && formik.touched.secondName ? <p className='error-authentication'>{formik.errors.secondName}</p>: null}
+                                    </div>
                             </div>
-                            <input 
-                                type="text" 
-                                id='address'
-                                name='address'
-                                value={formik.values.address}
-                                onChange={formik.handleChange}
-                                onBlur = {formik.handleBlur}
-                                placeholder='Address and number' 
-                                className='address-num-input'/>
-                            {formik.errors.address && formik.touched.address ? <p className='error-authentication'>{formik.errors.address}</p>: null}
-                            <input 
-                                type="text" 
-                                id='shippingNote'
-                                name='shippingNote'
-                                value={formik.values.shippingNote}
-                                onChange={formik.handleChange}
-                                onBlur = {formik.handleBlur}
-                                placeholder='Shipping note (optional)' 
-                                className='shipping-note-input'/>
+                            <div style={{marginBottom: "12px"}}>
+                                <input
+                                    type="text" 
+                                    id='address'
+                                    name='address'
+                                    value={formik.values.address}
+                                    onChange={formik.handleChange}
+                                    onBlur = {formik.handleBlur}
+                                    placeholder='Address and number' 
+                                    className='address-num-input'/>
+                                    
+                                {formik.errors.address && formik.touched.address ? <p className='error-authentication'>{formik.errors.address}</p>: null}
+                            </div>
+                            <div style={{marginBottom: "12px"}}>
+                                <input
+                                    type="text" 
+                                    id='shippingNote'
+                                    name='shippingNote'
+                                    value={formik.values.shippingNote}
+                                    onChange={formik.handleChange}
+                                    onBlur = {formik.handleBlur}
+                                    placeholder='Shipping note (optional)' 
+                                    className='shipping-note-input'/>
                                 {formik.errors.shippingNote && formik.touched.shippingNote ? <p className='error-authentication'>{formik.errors.shippingNote}</p>: null}
-                            <div className='address'>
-                                <input 
-                                    type="text" 
-                                    id='city'
-                                    name='city'
-                                    value={formik.values.city}
-                                    onChange={formik.handleChange}
-                                    onBlur = {formik.handleBlur}
-                                    placeholder='City' 
-                                    className='city-input'/>
-                                {formik.errors.city && formik.touched.city ? <p className='error-authentication'>{formik.errors.city}</p>: null}
-                                <input 
-                                    type="text" 
-                                    id='postalCode'
-                                    name='postalCode'
-                                    value={formik.values.postalCode}
-                                    onChange={formik.handleChange}
-                                    onBlur = {formik.handleBlur}
-                                    placeholder='Postal Code' 
-                                    className='province-input'/>
-                                {formik.errors.postalCode && formik.touched.postalCode ? <p className='error-authentication'>{formik.errors.postalCode}</p>: null}
-                                <input 
-                                    type="text" 
-                                    id='province'
-                                    name='province'
-                                    value={formik.values.province}
-                                    onChange={formik.handleChange}
-                                    onBlur = {formik.handleBlur}
-                                    placeholder='Province' 
-                                    className='code-input'/>
-                                {formik.errors.province && formik.touched.province ? <p className='error-authentication'>{formik.errors.province}</p>: null}
-                                
                             </div>
-                            <input 
-                                type="text" 
-                                id='country'
-                                name='country'
-                                value={formik.values.country}
-                                onChange={formik.handleChange}
-                                onBlur = {formik.handleBlur}
-                                placeholder='Country Region' 
-                                className='country-input'/>
-                            {formik.errors.country && formik.touched.country ? <p className='error-authentication'>{formik.errors.country}</p>: null}
+                            
+                            <div className='address'>
+                                <div style={{marginBottom: "12px"}}>
+                                    <input 
+                                        type="text" 
+                                        id='city'
+                                        name='city'
+                                        value={formik.values.city}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        placeholder='City' 
+                                        className='city-input'/>
+                                    {formik.errors.city && formik.touched.city ? <p className='error-authentication'>{formik.errors.city}</p>: null}
+                                </div>
+                                <div style={{marginBottom: "12px"}}>
+                                    <input 
+                                        type="text" 
+                                        id='postalCode'
+                                        name='postalCode'
+                                        value={formik.values.postalCode}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        placeholder='Postal Code' 
+                                        className='code-input'/>
+                                    {formik.errors.postalCode && formik.touched.postalCode ? <p className='error-authentication'>{formik.errors.postalCode}</p>: null}
+                                </div>
+                                <div style={{marginBottom: "12px"}}>
+                                    <input 
+                                        type="text" 
+                                        id='province'
+                                        name='province'
+                                        value={formik.values.province}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        placeholder='Province' 
+                                        className='province-input'/>
+                                    {formik.errors.province && formik.touched.province ? <p className='error-authentication'>{formik.errors.province}</p>: null}
+                                </div>                                
+                            </div>
+                            <div style={{marginBottom: "12px"}}>
+                                <input 
+                                    type="text" 
+                                    id='country'
+                                    name='country'
+                                    value={formik.values.country}
+                                    onChange={formik.handleChange}
+                                    onBlur = {formik.handleBlur}
+                                    placeholder='Country Region' 
+                                    className='country-input'/>
+                                {formik.errors.country && formik.touched.country ? <p className='error-authentication'>{formik.errors.country}</p>: null}
+                            </div>
+                            
                             <input type="checkbox" className='save-checkbox' name="save"/>
                             <label htmlFor="save">Save this informations for a future fast checkout</label>
                         </div>

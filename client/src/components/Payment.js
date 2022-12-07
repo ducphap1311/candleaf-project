@@ -49,47 +49,57 @@ export const Payment = () => {
                                 <p>Credit Card</p>
                             </div>
                             <div className='form-payment'>
-                                <input 
-                                    type="text" 
-                                    id='cardNumber'
-                                    name='cardNumber'
-                                    value={formik.values.cardNumber}
-                                    onChange={formik.handleChange}
-                                    onBlur = {formik.handleBlur}
-                                    placeholder="Card Number" 
-                                    className='card-number-input'/>
-                                {formik.errors.cardNumber && formik.touched.cardNumber ? <p className='error-payment'>{formik.errors.cardNumber}</p>: null}
-                                <input 
-                                    type="text" 
-                                    id='holderName'
-                                    name='holderName'
-                                    value={formik.values.holderName}
-                                    onChange={formik.handleChange}
-                                    onBlur = {formik.handleBlur}
-                                    placeholder="Holder Name" 
-                                    className='card-name-input'/>
-                                {formik.errors.holderName && formik.touched.holderName ? <p className='error-payment'>{formik.errors.holderName}</p>: null}
+                                <div style={{marginBottom: "12px"}}>
+                                    <input 
+                                        type="text" 
+                                        id='cardNumber'
+                                        name='cardNumber'
+                                        value={formik.values.cardNumber}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        placeholder="Card Number" 
+                                        className='card-number-input'/>
+                                    {formik.errors.cardNumber && formik.touched.cardNumber ? <p className='error-payment'>{formik.errors.cardNumber}</p>: null}
+                                </div>
+                                <div style={{marginBottom: "12px"}}>
+                                    <input 
+                                        type="text" 
+                                        id='holderName'
+                                        name='holderName'
+                                        value={formik.values.holderName}
+                                        onChange={formik.handleChange}
+                                        onBlur = {formik.handleBlur}
+                                        placeholder="Holder Name" 
+                                        className='card-name-input'/>
+                                    {formik.errors.holderName && formik.touched.holderName ? <p className='error-payment'>{formik.errors.holderName}</p>: null}
+                                </div>
+                                
                                 <div className='date-input-container'>
-                                    <input 
-                                        type="text" 
-                                        id='expiration'
-                                        name='expiration'
-                                        value={formik.values.expiration}
-                                        onChange={formik.handleChange}
-                                        onBlur = {formik.handleBlur}
-                                        placeholder="Expiration (MM/YY)" 
-                                        className='date-input'/>
-                                    {formik.errors.expiration && formik.touched.expiration ? <p className='error-payment'>{formik.errors.expiration}</p>: null}
-                                    <input 
-                                        type="text" 
-                                        id='cvv'
-                                        name='cvv'
-                                        value={formik.values.cvv}
-                                        onChange={formik.handleChange}
-                                        onBlur = {formik.handleBlur}
-                                        placeholder="CVV" 
-                                        className='cvv-input'/>
-                                    {formik.errors.cvv && formik.touched.cvv ? <p className='error-payment'>{formik.errors.cvv}</p>: null}
+                                    <div style={{marginBottom: "12px"}}>
+                                        <input 
+                                            type="text" 
+                                            id='expiration'
+                                            name='expiration'
+                                            value={formik.values.expiration}
+                                            onChange={formik.handleChange}
+                                            onBlur = {formik.handleBlur}
+                                            placeholder="Expiration (MM/YY)" 
+                                            className='date-input'/>
+                                        {formik.errors.expiration && formik.touched.expiration ? <p className='error-payment'>{formik.errors.expiration}</p>: null}
+                                    </div>
+                                    <div style={{marginBottom: "12px"}}>
+                                        <input 
+                                            type="text" 
+                                            id='cvv'
+                                            name='cvv'
+                                            value={formik.values.cvv}
+                                            onChange={formik.handleChange}
+                                            onBlur = {formik.handleBlur}
+                                            placeholder="CVV" 
+                                            className='cvv-input'/>
+                                        {formik.errors.cvv && formik.touched.cvv ? <p className='error-payment'>{formik.errors.cvv}</p>: null}
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

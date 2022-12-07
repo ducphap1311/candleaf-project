@@ -472,17 +472,22 @@
 
 .empty-cart {
   text-align: center;
-  margin-bottom: 200px;
+  height: 70vh;
 }
 
-.empty-cart h1 {
-  margin: 100px 0 20px;
+.empty-cart p {
+  margin: 250px 0 20px;
   font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #474747;
 }
 
 .empty-cart .fill-link {
   background-color: #56B280;
   border: 1px solid #56B280;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
   text-decoration: none;
   color: #ffffff;
   cursor: pointer;
@@ -1050,7 +1055,7 @@
     top: 50px;
     right: -10px;
   }
-  .link-sign {
+  .sign .link-sign {
     text-decoration: none;
     color: black;
     font-size: 17px;
@@ -1119,6 +1124,7 @@
 
 .products-list .product__img {
   width: 100%;
+  height: 177px;
   background-color: whitesmoke;
 }
 
@@ -1303,6 +1309,11 @@
   }
   .products-list .product {
     width: 100%;
+  }
+  .products-list .product__img {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .content-products .content {
     padding: 15px;
@@ -1373,6 +1384,7 @@
 
 .products-list .product__img {
   width: 100%;
+  height: 177px;
   background-color: whitesmoke;
 }
 
@@ -1557,6 +1569,11 @@
   }
   .products-list .product {
     width: 100%;
+  }
+  .products-list .product__img {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .content-products .content {
     padding: 15px;
@@ -2348,7 +2365,6 @@
 }
 
 .error-authentication {
-  margin-bottom: 25px;
   color: red;
 }
 
@@ -2423,7 +2439,6 @@
 
 .authentication-text__shipping-address input {
   padding: 7px 17px;
-  margin-bottom: 12px;
 }
 
 .authentication-text__shipping-address input::-webkit-input-placeholder {
@@ -2461,18 +2476,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .authentication-text__shipping-address .name-input,
 .authentication-text__shipping-address .second-name-input {
-  width: 50%;
-}
-
-.authentication-text__shipping-address .name-input {
-  margin-right: 13px;
+  width: 100%;
 }
 
 .authentication-text__shipping-address .address-num-input,
@@ -3496,7 +3507,6 @@
 
 .error-payment {
   color: red;
-  margin-bottom: 25px;
 }
 
 .payment-text .authentication-titles .details-title,
@@ -3553,7 +3563,6 @@
 
 .payment-text__method .credit-card .form-payment input {
   border: 0.5px solid #898989;
-  margin-bottom: 12px;
   padding: 7px 17px;
 }
 
@@ -3594,19 +3603,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .payment-text__method .credit-card .form-payment .date-input-container .date-input {
-  width: 50%;
-  margin-right: 14px;
+  width: 100%;
   margin-bottom: 0;
 }
 
 .payment-text__method .credit-card .form-payment .date-input-container .cvv-input {
-  width: 50%;
+  width: 100%;
   margin-bottom: 0;
 }
 

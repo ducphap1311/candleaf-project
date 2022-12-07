@@ -248,14 +248,16 @@
         position: absolute;
         top: 50px;
         right: -10px;
+
+        .link-sign{
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+            padding: 5px;
+        }
     }
 
-    .link-sign{
-        text-decoration: none;
-        color: black;
-        font-size: 17px;
-        padding: 5px;
-    }
+    
 }
 
 @include mobile(450px){

@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import {useHover} from 'react-use';
 import {Link, NavLink} from 'react-router-dom'
 import logoImg from '../images/logo-img.svg'
 import logoText from '../images/logo-text.svg'
@@ -18,6 +19,17 @@ export const Navbar = () => {
     const [userName, setUserName] = useState("")
     const [out, setOut] = useState(false)
     const dispatch = useDispatch()
+    const element = (hovered) =>
+    <div>
+        <img src={userIcon} alt="user"
+            className='navbar-links__user-icon' 
+            onClick={() => setOpen(!open)}/> 
+            {hovered && <div className='sign'>
+                            <Link to='/signup' className='link-sign' style={{textDecoration: "none", color: "black", fontSize: "17px", padding: "6px"}} onClick={() => setOpen(false)}>Sign up</Link>
+                            <Link to='/signin' className='link-sign' style={{textDecoration: "none", color: "black", fontSize: "17px", padding: "6px"}}>Sign in</Link>
+                        </div>}
+    </div>;
+    const [hoverable, hovered] = useHover(element)
 
     useEffect(() => {
         const linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -58,6 +70,7 @@ export const Navbar = () => {
                     <div className='navbar-header__menu'>
                         {showLinks ? <img srcSet={`${closeIcon} 4x`} alt="close-icon" onClick={() => setShowLinks(!showLinks)} className='navbar-header__close-icon'></img>: <img srcSet={`${menuIcon} 4x`} alt="menu-icon" onClick={() => setShowLinks(!showLinks)} className='navbar-header__menu-icon'></img>}
                     </div>
+                    
                     <Link to="/" className='navbar-header__logo-container'>
                         <img src={logoImg} alt='candleaf-img' className='navbar-header__logo-img'/> 
                         <img src={logoText} alt='candleaf-text' className='navbar-header__logo-text'/>
@@ -67,11 +80,7 @@ export const Navbar = () => {
                             {isLogin ? <div className='username-container'>
                                     <p onClick={() => setOut(!out)}>{userName}</p>
                                     {out && <p onClick={userLogOut}>Log out</p>}
-                                    </div> : <img src={userIcon} alt="user" className='navbar-links__user-icon' onClick={() => setOpen(!open)}/>}
-                            {open && <div className='sign'>
-                                        <Link to='/signup' className='link-sign' onClick={() => setOpen(false)}>Sign up</Link>
-                                        <Link to='/signin' className='link-sign'>Sign in</Link>
-                                    </div>}
+                                    </div> : <>{hoverable}</>}
                             
                         </li>
                         <li>
@@ -99,12 +108,9 @@ export const Navbar = () => {
                             {isLogin ? <div className='username-container'>
                                     <p onClick={() => setOut(!out)}>{userName}</p>
                                     {out && <p onClick={userLogOut}>Log out</p>}
-                                    </div> : <img src={userIcon} alt="user" className='navbar-links__user-icon' onClick={() => setOpen(!open)}/>}
-                            {open && <div className='sign'>
-                                        <Link to='/signup' className='link' onClick={() => setOpen(false)}>Sign up</Link>
-                                        <Link to='/signin' className='link'>Sign in</Link>
-                                    </div>}
-                            
+                                    </div> : <>{hoverable}</>
+                            }
+                            {/* {hoverable} */}
                         </li>
                         <li>
                             <Link to="/cart" className='navbar-links__cart-container'>
