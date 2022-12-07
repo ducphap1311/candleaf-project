@@ -8,7 +8,7 @@ export const SingleProduct = () => {
     const { id } = useParams();
     const [amount, setAmount] = useState(1);    
     const dispatch = useDispatch()
-    const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs/`+ id)
+    const [data, loading] = useFetch(`https://candleafs-api.herokuapp.com/api/v1/candleafs/`+ id)
     const increaseAmount = () => {
         setAmount(amount + 1) ;
     }

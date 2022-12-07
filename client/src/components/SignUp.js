@@ -42,7 +42,7 @@ export const SignUp = () => {
         },
         onSubmit: async (values) => {
             try {
-                const rawResponse = await fetch('http://localhost:5000/api/auth/register', 
+                const rawResponse = await fetch('https://candleafs-api.herokuapp.com/api/auth/register', 
                 {
                     method: 'POST',
                     headers: {
