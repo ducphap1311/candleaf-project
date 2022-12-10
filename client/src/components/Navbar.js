@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {useHover} from 'react-use';
-import {Link, NavLink} from 'react-router-dom'
+import {Link, NavLink, useNavigate} from 'react-router-dom'
 import logoImg from '../images/logo-img.svg'
 import logoText from '../images/logo-text.svg'
 import userIcon from '../images/user-icon.svg'
@@ -15,21 +15,21 @@ export const Navbar = () => {
     const { amount, isLogin } = useSelector((store) => store.cart)
     const linksContainerRef = useRef();
     const linksRef = useRef();
-    const [open, setOpen] = useState(false)
     const [userName, setUserName] = useState("")
     const [out, setOut] = useState(false)
     const dispatch = useDispatch()
-    const element = (hovered) =>
+    const navigate = useNavigate();
+
+    const signElement = (hovered) =>
     <div>
         <img src={userIcon} alt="user"
-            className='navbar-links__user-icon' 
-            onClick={() => setOpen(!open)}/> 
+            className='navbar-links__user-icon' /> 
             {hovered && <div className='sign'>
-                            <Link to='/signup' className='link-sign' style={{textDecoration: "none", color: "black", fontSize: "17px", padding: "6px"}} onClick={() => setOpen(false)}>Sign up</Link>
-                            <Link to='/signin' className='link-sign' style={{textDecoration: "none", color: "black", fontSize: "17px", padding: "6px"}}>Sign in</Link>
+                            <Link to='/signup' className='link-sign' >Sign up</Link>
+                            <Link to='/signin' className='link-sign' >Sign in</Link>
                         </div>}
     </div>;
-    const [hoverable, hovered] = useHover(element)
+    const [hoverable, hovered] = useHover(signElement)
 
     useEffect(() => {
         const linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -44,7 +44,6 @@ export const Navbar = () => {
         const user = localStorage.getItem("userName");
         if(user){
             setUserName(user)
-            setOpen(false)
         } else {
             setUserName("")
         }
@@ -79,9 +78,11 @@ export const Navbar = () => {
                         <li className='navbar-links__user-container'>
                             {isLogin ? <div className='username-container'>
                                     <p onClick={() => setOut(!out)}>{userName}</p>
-                                    {out && <p onClick={userLogOut}>Log out</p>}
+                                    {out && <p onClick={() => {
+                                        userLogOut()
+                                        navigate('/')
+                                        }} className = 'log-out'>Log out</p>}
                                     </div> : <>{hoverable}</>}
-                            
                         </li>
                         <li>
                             <Link to="/cart" className='navbar-header__cart'>
@@ -107,7 +108,10 @@ export const Navbar = () => {
                         <li className='navbar-links__user-container'>
                             {isLogin ? <div className='username-container'>
                                     <p onClick={() => setOut(!out)}>{userName}</p>
-                                    {out && <p onClick={userLogOut}>Log out</p>}
+                                    {out && <p onClick={() => {
+                                        userLogOut()
+                                        navigate('/')
+                                        }} className='log-out'>Log out</p>}
                                     </div> : <>{hoverable}</>
                             }
                             {/* {hoverable} */}

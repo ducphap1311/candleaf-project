@@ -55,8 +55,9 @@ input{
 }
 
 .signup-btn:hover {
-    opacity: 0.8;
     cursor: pointer;
+    background-color: $primary-color;
+    color: white;
 }
 
 

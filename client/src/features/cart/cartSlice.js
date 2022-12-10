@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-    cartItems: [],
+    cartItems: JSON.parse(localStorage.getItem('cartItems')) === null? [] : JSON.parse(localStorage.getItem('cartItems')),
     amount: 0,
     total: 0,
     isLoading: false,
@@ -70,7 +70,7 @@ const cartSlice = createSlice({
                 a.total += c.amount * c.price;
                 return a
             },{amount: 0, total: 0})
-    
+            localStorage.setItem('cartItems', JSON.stringify([...state.cartItems]))
             state.amount = amount
             state.total = total
         },

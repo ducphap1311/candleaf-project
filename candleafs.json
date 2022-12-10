@@ -11,7 +11,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product2.f9cc83aeba3b1e038904.png",
         "name": "Sweet Straweberry",
-        "price": 9.99,
+        "price": 8.99,
         "popular": true,
         "amount": 1,
         "color": "pink",
@@ -20,7 +20,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product3.7f23dc2ff38fe6003a27.png",
         "name": "Cool Blueberries",
-        "price": 9.99,
+        "price": 7.99,
         "popular": true,
         "amount": 1,
         "color": "blue",
@@ -29,7 +29,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product4.1792143121ea126d690d.png",
         "name": "Juicy Lemon",
-        "price": 9.99,
+        "price": 11.99,
         "popular": true,
         "amount": 1,
         "color": "yellow",
@@ -38,7 +38,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product5.306f9394bf917bcaa899.png",
         "name": "Sweet Vi",
-        "price": 9.99,
+        "price": 12.99,
         "popular": false,
         "amount": 1, 
         "color": "orange",
@@ -47,7 +47,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product6.8ae8726320c7e23db0d1.png",
         "name": "Fragrant Cinnamon",
-        "price": 9.99,
+        "price": 12.99,
         "popular": false,
         "amount": 1,
         "color": "brown",
@@ -56,7 +56,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product7.f184dc5c244d21f95e83.png",
         "name": "Summer Cherries",
-        "price": 9.99,
+        "price": 11.99,
         "popular": false,
         "amount": 1,
         "color": "red",
@@ -65,7 +65,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product8.6335239fbca50d20fc87.png",
         "name": "Clean Lavander",
-        "price": 9.99,
+        "price": 10.99,
         "popular": false,
         "amount": 1,
         "color": "purple",
@@ -83,7 +83,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product2.f9cc83aeba3b1e038904.png",
         "name": "Sugar Straweberry",
-        "price": 9.99,
+        "price": 8.99,
         "popular": false,
         "amount": 1, 
         "color": "pink",
@@ -92,7 +92,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product3.7f23dc2ff38fe6003a27.png",
         "name": "Warm Blueberries",
-        "price": 9.99,
+        "price": 7.99,
         "popular": false,
         "amount": 1, 
         "color": "blue",
@@ -101,7 +101,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product4.1792143121ea126d690d.png",
         "name": "Sweet Lemon",
-        "price": 9.99,
+        "price": 8.99,
         "popular": false,
         "amount": 1, 
         "color": "yellow",
@@ -119,7 +119,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product6.8ae8726320c7e23db0d1.png",
         "name": "Fantastic Cinnamon",
-        "price": 9.99,
+        "price": 10.99,
         "popular": false,
         "amount": 1, 
         "color": "brown",
@@ -128,7 +128,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product7.f184dc5c244d21f95e83.png",
         "name": "Autumn Cherries",
-        "price": 9.99,
+        "price": 11.99,
         "popular": false,
         "amount": 1, 
         "color": "red",
@@ -137,7 +137,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product8.6335239fbca50d20fc87.png",
         "name": "Clean Lavander",
-        "price": 9.99,
+        "price": 12.99,
         "popular": false,
         "amount": 1, 
         "color": "purple",
@@ -146,7 +146,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product1.7a42104172bcfa85b1f8.png",
         "name": "Sugar Mint",
-        "price": 9.99,
+        "price": 11.99,
         "popular": false,
         "amount": 1, 
         "color": "green",
@@ -155,7 +155,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product2.f9cc83aeba3b1e038904.png",
         "name": "Light Straweberry",
-        "price": 9.99,
+        "price": 10.99,
         "popular": false,
         "amount": 1,
         "color": "pink",
@@ -173,7 +173,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product4.1792143121ea126d690d.png",
         "name": "Magnificent Lemon",
-        "price": 9.99,
+        "price": 8.99,
         "popular": false,
         "amount": 1,
         "color": "yellow",
@@ -182,7 +182,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product5.306f9394bf917bcaa899.png",
         "name": "Darling Vi",
-        "price": 9.99,
+        "price": 8.99,
         "popular": false,
         "amount": 1, 
         "color": "orange",
@@ -191,7 +191,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product6.8ae8726320c7e23db0d1.png",
         "name": "Tom Cinnamon",
-        "price": 9.99,
+        "price": 7.99,
         "popular": false,
         "amount": 1,
         "color": "brown",
@@ -200,7 +200,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product7.f184dc5c244d21f95e83.png",
         "name": "Gifty Cherries",
-        "price": 9.99,
+        "price": 8.99,
         "popular": false,
         "amount": 1,
         "color": "red",
@@ -218,7 +218,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product1.7a42104172bcfa85b1f8.png",
         "name": "Isam Lint",
-        "price": 9.99,
+        "price": 10.99,
         "popular": false,
         "amount": 1, 
         "color": "green",
@@ -227,7 +227,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product2.f9cc83aeba3b1e038904.png",
         "name": "Beauty Straweberry",
-        "price": 9.99,
+        "price": 11.99,
         "popular": false,
         "amount": 1, 
         "color": "pink",
@@ -236,7 +236,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product3.7f23dc2ff38fe6003a27.png",
         "name": "Fresh Blueberries",
-        "price": 9.99,
+        "price": 12.99,
         "popular": false,
         "amount": 1, 
         "color": "blue",
@@ -245,7 +245,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product4.1792143121ea126d690d.png",
         "name": "Sweet Lemon",
-        "price": 9.99,
+        "price": 11.99,
         "popular": false,
         "amount": 1, 
         "color": "yellow",
@@ -254,7 +254,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product5.306f9394bf917bcaa899.png",
         "name": "Sweet Laravel",
-        "price": 9.99,
+        "price": 10.99,
         "popular": false,
         "amount": 1, 
         "color": "orange",
@@ -272,7 +272,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product7.f184dc5c244d21f95e83.png",
         "name": "Ocean Cherries",
-        "price": 9.99,
+        "price": 8.99,
         "popular": false,
         "amount": 1, 
         "color": "red",
@@ -281,7 +281,7 @@
     {
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product8.6335239fbca50d20fc87.png",
         "name": "Candy Lavarant",
-        "price": 9.99,
+        "price": 7.99,
         "popular": false,
         "amount": 1, 
         "color": "purple",

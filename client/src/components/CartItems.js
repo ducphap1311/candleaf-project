@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { increaseItem, decreaseItem, removeItem  } from '../features/cart/cartSlice'
 
 export const CartItems = () => {
     const dispatch = useDispatch();
-    const {cartItems, total} = useSelector((store) => store.cart)
+    const {total} = useSelector((store) => store.cart)
+    const {cartItems} = useSelector(store => store.cart)
 
     if(cartItems.length !== 0){
         return (

@@ -5,7 +5,7 @@ export const useFetch = (url) => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetchData(url)
+        fetchData(url);
     }, [url])
 
     const fetchData = async(url) => {
