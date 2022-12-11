@@ -111,6 +111,17 @@
                 color: white;
                 border-color: transparent;
                 cursor: pointer;
+
+                &:hover{
+                    background-color: white;
+                    color: $primary-color;
+                    border: 1px solid $primary-color;
+                }
+
+                &:active{
+                    background-color: $primary-color;
+                    color: white;
+                }
         }
     }
 }
@@ -192,6 +203,14 @@
                 color: $primary-color;
                 text-decoration: underline;
                 font-size: 18px;   
+
+                &:hover{
+                    color: black;
+                }
+
+                &:active{
+                    color: $primary-color;
+                }
             }
         }
     }

@@ -118,6 +118,7 @@
         .save-checkbox{
             margin-right: 6px;
         }
+
     }
 
     &__shipping-btn{
@@ -127,7 +128,11 @@
             @extend .back-to-details-link;
 
             &:hover{
-                color: rgb(1, 132, 1);
+                color: rgb(0, 0, 0);
+            }
+
+            &:active{
+                color: $primary-color;
             }
         }
 
@@ -142,6 +147,17 @@
             color: white;
             cursor: pointer;
             border-color: transparent;
+
+            &:hover{
+                background-color: white;
+                color: $primary-color;
+                border: 1px solid $primary-color;
+            }
+
+            &:active{
+                background-color: $primary-color;
+                color: white;
+            }
         }
     }
 }
@@ -238,7 +254,11 @@
                 font-size: 18px;
                 
                 &:hover{
-                    color: rgb(1, 132, 1);
+                    color: rgb(0, 0, 0);
+                }
+
+                &:active{
+                    color: $primary-color;
                 }
             }
         }

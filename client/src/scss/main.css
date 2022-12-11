@@ -86,6 +86,11 @@
   border: 1px solid #56B280;
 }
 
+.about-text .about-btn:active {
+  color: white;
+  background: #56B280;
+}
+
 .about-img img {
   max-width: 540px;
   max-height: 377px;
@@ -174,6 +179,10 @@
   color: #009129;
 }
 
+.cart-items-header__back-to-shop-link:active {
+  color: #56B280;
+}
+
 .cart-items-list {
   padding: 0 15px;
 }
@@ -258,7 +267,11 @@
 }
 
 .cart-items-list .item__info .remove-btn:hover {
-  color: #009129;
+  color: red;
+}
+
+.cart-items-list .item__info .remove-btn:active {
+  color: #56B280;
 }
 
 .cart-items-list .item__price {
@@ -294,7 +307,11 @@
 }
 
 .cart-items-list .item__quantity .quantity-container .btn:hover {
-  color: #009129;
+  color: black;
+}
+
+.cart-items-list .item__quantity .quantity-container .btn:active {
+  color: #56B280;
 }
 
 .cart-items-list .item__total {
@@ -357,6 +374,11 @@
   background-color: white;
   color: #56B280;
   border: 1px solid #56B280;
+}
+
+.cart-items-check-out button:active {
+  background-color: #56B280;
+  color: white;
 }
 
 @media screen and (max-width: 850px) {
@@ -720,6 +742,11 @@
   border: 1px solid #56B280;
 }
 
+.hero-container .hero-modal__discovery-btn:active {
+  background: #56B280;
+  color: white;
+}
+
 @media screen and (max-width: 850px) {
   .hero-container .hero-modal {
     width: 90vw;
@@ -973,12 +1000,23 @@
     position: relative;
     margin-left: 20px;
   }
+  .navbar-links__cart-container:hover .navbar-links__cart-amount {
+    background-color: #56B280;
+    color: white;
+    border-radius: 50%;
+  }
+  .navbar-links__cart-container:active .navbar-links__cart-amount {
+    background-color: transparent;
+    color: #56B280;
+    border-radius: 50%;
+  }
   .navbar-links__cart-amount {
     position: absolute;
     font-size: 20px;
     font-weight: 500;
     top: -27px;
-    right: -10px;
+    right: -16px;
+    padding: 1px 9px;
   }
   .navbar-links__cart-icon {
     width: 25px;
@@ -1045,12 +1083,23 @@
     position: relative;
     margin-left: 20px;
   }
+  .navbar-header__cart:hover .navbar-header__cart-amount {
+    background-color: #56B280;
+    color: white;
+    border-radius: 50%;
+  }
+  .navbar-header__cart:active .navbar-header__cart-amount {
+    background-color: transparent;
+    color: #56B280;
+    border-radius: 50%;
+  }
   .navbar-header__cart-amount {
     position: absolute;
     font-size: 20px;
     font-weight: 500;
     top: -27px;
-    right: -10px;
+    right: -16px;
+    padding: 1px 9px;
   }
   .navbar-links {
     background-color: white;
@@ -1209,6 +1258,18 @@
   margin-bottom: 15px;
 }
 
+.content-products .content input[type=text] {
+  border: 2px solid #56B280;
+}
+
+.content-products .content input[type=text]:active {
+  border: 2px solid #56B280;
+}
+
+.content-products .content input[type=text]:focus {
+  border: 2px solid #56B280;
+}
+
 .content-products .content .form-control h5 {
   font-size: 20px;
   color: #4a4a4a;
@@ -1233,13 +1294,17 @@
   padding: 5px 5px 5px 0;
   border-color: transparent;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   font-size: 17px;
   color: #484848;
 }
 
+.content-products .content .form-control__category .cate-btn:hover {
+  border-bottom: 3px solid #56B280;
+}
+
 .content-products .content .form-control__category .cate-active {
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid #56B280;
 }
 
 .content-products .content .form-control__colors {
@@ -1260,10 +1325,18 @@
   font-size: 17px;
 }
 
+.content-products .content .form-control__colors button:hover {
+  border: 3px solid black;
+}
+
 .content-products .content .form-control__colors .color-btn {
   width: 17px;
   height: 17px;
   border-radius: 50%;
+}
+
+.content-products .content .form-control__colors .color-btn:hover {
+  border: 3px solid black;
 }
 
 .content-products .content .form-control__colors .color-active {
@@ -1271,7 +1344,7 @@
 }
 
 .content-products .content .clear-btn {
-  background-color: red;
+  background-color: #56B280;
   color: white;
   padding: 2px 5px;
   font-size: 16px;
@@ -1280,8 +1353,12 @@
   border-color: transparent;
 }
 
+.content-products .content .clear-btn:hover {
+  background-color: red;
+}
+
 .content-products .content .clear-btn:active {
-  background-color: #a00000;
+  background-color: #56B280;
 }
 
 .content-products .content .form-sort label {
@@ -1477,7 +1554,11 @@
 }
 
 .single-product-info__amount-btn button:hover {
-  color: #005c00;
+  color: black;
+}
+
+.single-product-info__amount-btn button:active {
+  color: #56B280;
 }
 
 .single-product-info__amount-btn .amount {
@@ -1578,6 +1659,11 @@
   background-color: white;
   color: #56B280;
   border: 1px solid #56B280;
+}
+
+.single-product-info__add-btn:active {
+  background: #56B280;
+  color: white;
 }
 
 .single-product-info__extra-informations {
@@ -1912,6 +1998,14 @@
   font-size: 18px;
 }
 
+.shipping-text__shipping-btn .back-to-details-link:hover, .authentication-text__shipping-btn .back-to-details-link:hover, .payment-text__shipping-btn .back-to-details-link:hover, .authentication-text__shipping-btn .back-to-cart-link:hover {
+  color: black;
+}
+
+.shipping-text__shipping-btn .back-to-details-link:active, .authentication-text__shipping-btn .back-to-details-link:active, .payment-text__shipping-btn .back-to-details-link:active, .authentication-text__shipping-btn .back-to-cart-link:active {
+  color: #56B280;
+}
+
 .shipping-text__shipping-btn .payment-link button, .authentication-text__shipping-btn .payment-link button, .payment-text__shipping-btn .payment-link button {
   font-weight: 500;
   font-size: 20.6452px;
@@ -1927,6 +2021,11 @@
   background-color: white;
   color: #56B280;
   border: 1px solid #56B280;
+}
+
+.shipping-text__shipping-btn .payment-link button:active, .authentication-text__shipping-btn .payment-link button:active, .payment-text__shipping-btn .payment-link button:active {
+  background-color: #56B280;
+  color: white;
 }
 
 .shipping-products, .authentication-product, .payment-products {
@@ -2125,6 +2224,12 @@
     text-decoration: underline;
     font-size: 18px;
   }
+  .shipping-text__shipping-btn .back-to-details-link-r:hover, .authentication-text__shipping-btn .back-to-details-link-r:hover, .payment-text__shipping-btn .back-to-details-link-r:hover {
+    color: black;
+  }
+  .shipping-text__shipping-btn .back-to-details-link-r:active, .authentication-text__shipping-btn .back-to-details-link-r:active, .payment-text__shipping-btn .back-to-details-link-r:active {
+    color: #56B280;
+  }
   .shipping-products, .authentication-product, .payment-products {
     margin-left: 0;
     padding-bottom: 60px;
@@ -2300,7 +2405,11 @@
 }
 
 .authentication-text__shipping-btn .back-to-cart-link:hover {
-  color: #018401;
+  color: black;
+}
+
+.authentication-text__shipping-btn .back-to-cart-link:active {
+  color: #56B280;
 }
 
 .authentication-text__shipping-btn .shipping-link {
@@ -2313,6 +2422,17 @@
   color: white;
   cursor: pointer;
   border-color: transparent;
+}
+
+.authentication-text__shipping-btn .shipping-link:hover {
+  background-color: white;
+  color: #56B280;
+  border: 1px solid #56B280;
+}
+
+.authentication-text__shipping-btn .shipping-link:active {
+  background-color: #56B280;
+  color: white;
 }
 
 @media screen and (min-width: 1450px) {
@@ -2380,7 +2500,10 @@
     font-size: 18px;
   }
   .authentication-text__shipping-btn .back-to-cart-link-r:hover {
-    color: #018401;
+    color: black;
+  }
+  .authentication-text__shipping-btn .back-to-cart-link-r:active {
+    color: #56B280;
   }
 }
 
@@ -2626,6 +2749,14 @@
   font-size: 18px;
 }
 
+.shipping-text__shipping-btn .back-to-details-link:hover, .authentication-text__shipping-btn .back-to-details-link:hover, .payment-text__shipping-btn .back-to-details-link:hover, .authentication-text__shipping-btn .back-to-cart-link:hover {
+  color: black;
+}
+
+.shipping-text__shipping-btn .back-to-details-link:active, .authentication-text__shipping-btn .back-to-details-link:active, .payment-text__shipping-btn .back-to-details-link:active, .authentication-text__shipping-btn .back-to-cart-link:active {
+  color: #56B280;
+}
+
 .shipping-text__shipping-btn .payment-link button, .authentication-text__shipping-btn .payment-link button, .payment-text__shipping-btn .payment-link button {
   font-weight: 500;
   font-size: 20.6452px;
@@ -2641,6 +2772,11 @@
   background-color: white;
   color: #56B280;
   border: 1px solid #56B280;
+}
+
+.shipping-text__shipping-btn .payment-link button:active, .authentication-text__shipping-btn .payment-link button:active, .payment-text__shipping-btn .payment-link button:active {
+  background-color: #56B280;
+  color: white;
 }
 
 .shipping-products, .authentication-product, .payment-products {
@@ -2838,6 +2974,12 @@
     color: #56B280;
     text-decoration: underline;
     font-size: 18px;
+  }
+  .shipping-text__shipping-btn .back-to-details-link-r:hover, .authentication-text__shipping-btn .back-to-details-link-r:hover, .payment-text__shipping-btn .back-to-details-link-r:hover {
+    color: black;
+  }
+  .shipping-text__shipping-btn .back-to-details-link-r:active, .authentication-text__shipping-btn .back-to-details-link-r:active, .payment-text__shipping-btn .back-to-details-link-r:active {
+    color: #56B280;
   }
   .shipping-products, .authentication-product, .payment-products {
     margin-left: 0;
@@ -3057,6 +3199,14 @@
   font-size: 18px;
 }
 
+.shipping-text__shipping-btn .back-to-details-link:hover, .authentication-text__shipping-btn .back-to-details-link:hover, .payment-text__shipping-btn .back-to-details-link:hover, .authentication-text__shipping-btn .back-to-cart-link:hover {
+  color: black;
+}
+
+.shipping-text__shipping-btn .back-to-details-link:active, .authentication-text__shipping-btn .back-to-details-link:active, .payment-text__shipping-btn .back-to-details-link:active, .authentication-text__shipping-btn .back-to-cart-link:active {
+  color: #56B280;
+}
+
 .shipping-text__shipping-btn .payment-link button, .authentication-text__shipping-btn .payment-link button, .payment-text__shipping-btn .payment-link button {
   font-weight: 500;
   font-size: 20.6452px;
@@ -3072,6 +3222,11 @@
   background-color: white;
   color: #56B280;
   border: 1px solid #56B280;
+}
+
+.shipping-text__shipping-btn .payment-link button:active, .authentication-text__shipping-btn .payment-link button:active, .payment-text__shipping-btn .payment-link button:active {
+  background-color: #56B280;
+  color: white;
 }
 
 .shipping-products, .authentication-product, .payment-products {
@@ -3270,6 +3425,12 @@
     text-decoration: underline;
     font-size: 18px;
   }
+  .shipping-text__shipping-btn .back-to-details-link-r:hover, .authentication-text__shipping-btn .back-to-details-link-r:hover, .payment-text__shipping-btn .back-to-details-link-r:hover {
+    color: black;
+  }
+  .shipping-text__shipping-btn .back-to-details-link-r:active, .authentication-text__shipping-btn .back-to-details-link-r:active, .payment-text__shipping-btn .back-to-details-link-r:active {
+    color: #56B280;
+  }
   .shipping-products, .authentication-product, .payment-products {
     margin-left: 0;
     padding-bottom: 60px;
@@ -3413,6 +3574,17 @@
   cursor: pointer;
 }
 
+.payment-text__shipping-btn .payment-link:hover {
+  background-color: white;
+  color: #56B280;
+  border: 1px solid #56B280;
+}
+
+.payment-text__shipping-btn .payment-link:active {
+  background-color: #56B280;
+  color: white;
+}
+
 @media screen and (min-width: 1450px) {
   .payment-text__payment-link .back-to-details-link-r {
     display: none;
@@ -3462,6 +3634,12 @@
     color: #56B280;
     text-decoration: underline;
     font-size: 18px;
+  }
+  .payment-text__shipping-btn .back-to-details-link-r:hover {
+    color: black;
+  }
+  .payment-text__shipping-btn .back-to-details-link-r:active {
+    color: #56B280;
   }
   .shipping-products, .authentication-product, .payment-products {
     margin-left: 0;
@@ -3553,9 +3731,13 @@ input {
 }
 
 .signup-btn:hover {
-  cursor: pointer;
   background-color: #56B280;
   color: white;
+}
+
+.signup-btn:active {
+  background-color: white;
+  color: black;
 }
 
 @media screen and (max-width: 2560px) {
@@ -3652,9 +3834,13 @@ input {
 }
 
 .signup-btn:hover {
-  cursor: pointer;
   background-color: #56B280;
   color: white;
+}
+
+.signup-btn:active {
+  background-color: white;
+  color: black;
 }
 
 @media screen and (max-width: 2560px) {

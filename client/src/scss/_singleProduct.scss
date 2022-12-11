@@ -99,7 +99,11 @@
             cursor: pointer;
 
             &:hover{
-                color: rgb(0, 92, 0);
+                color: rgb(0, 0, 0);
+            }
+
+            &:active{
+                color: $primary-color;
             }
         }
 
@@ -188,6 +192,11 @@
 
         &:hover{
             @include hoverButton;
+        }
+
+        &:active{
+            background: $primary-color;
+            color: white;
         }
     }
 

@@ -100,6 +100,19 @@
             margin-bottom: 15px;
         }
 
+        input[type=text]{
+            border: 2px solid $primary-color;
+
+            &:active{
+                border: 2px solid $primary-color;
+            }
+        }
+
+        input[type=text]:focus{
+            border: 2px solid $primary-color;
+            
+        }
+
         .form-control{
             h5{
                 font-size: 20px;
@@ -117,13 +130,17 @@
                     padding: 5px 5px 5px 0;
                     border-color: transparent;
                     cursor: pointer;
-                    border: 2px solid transparent;
+                    border: 3px solid transparent;
                     font-size: 17px;
                     color: rgb(72, 72, 72);
+
+                    &:hover{
+                        border-bottom: 3px solid $primary-color;
+                    }
                 }
 
                 .cate-active{
-                    border-bottom: 2px solid black;
+                    border-bottom: 3px solid $primary-color;
                 }
             }
         
@@ -138,30 +155,43 @@
                     cursor: pointer;
                     background-color: transparent;
                     font-size: 17px;
+
+                    &:hover{
+                        border: 3px solid black;
+                    }
                 }
         
                 .color-btn{
                     width: 17px;
                     height: 17px;
                     border-radius: 50%;
+
+                    &:hover{
+                        border: 3px solid black;
+                    }
                 }
 
                 .color-active{
-                    border: 3px solid rgb(0, 0, 0);
+                    border: 3px solid black;
                 }
             }
         }
 
         .clear-btn{
-            background-color: red;
+            background-color: $primary-color;
             color: white;
             padding: 2px 5px;
             font-size: 16px;
             cursor: pointer;
             margin-bottom: 20px;
             border-color: transparent;
+            
+            &:hover{
+                background-color: red;
+            }
+
             &:active{
-                background-color: rgb(160, 0, 0);
+                background-color: $primary-color;
             }
         }
         

@@ -33,6 +33,10 @@
         &:hover{
             color: rgb(0, 145, 41);
         }
+
+        &:active{
+            color: $primary-color;
+        }
     }
 }
 
@@ -110,7 +114,11 @@
                 cursor: pointer;
 
                 &:hover{
-                    color: rgb(0, 145, 41);
+                    color: rgb(255, 0, 0);
+                }
+
+                &:active{
+                    color: $primary-color;
                 }
             }
         }
@@ -140,7 +148,11 @@
                     cursor: pointer;
 
                     &:hover{
-                        color: rgb(0, 145, 41);
+                        color: rgb(0, 0, 0);
+                    }
+
+                    &:active{
+                        color: $primary-color;
                     }
                 }
             }
@@ -198,6 +210,11 @@
 
         &:hover{
             @include hoverButton;
+        }
+
+        &:active{
+            background-color: $primary-color;
+            color: white;
         }
     }
 }

@@ -12,7 +12,7 @@ import { checkIsLogin } from '../features/cart/cartSlice'
 
 export const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false)
-    const { amount, isLogin } = useSelector((store) => store.cart)
+    const { amount, isLogin, cartItems } = useSelector((store) => store.cart)
     const linksContainerRef = useRef();
     const linksRef = useRef();
     const [userName, setUserName] = useState("")
@@ -87,7 +87,7 @@ export const Navbar = () => {
                         <li>
                             <Link to="/cart" className='navbar-header__cart'>
                                 <img src={cartIcon} alt="card" className='navbar-header__cart-img' />
-                                <div className='navbar-header__cart-amount'>{amount}</div>
+                                <div className='navbar-header__cart-amount'>{cartItems.length}</div>
                             </Link>
                         </li>
                     </ul>    
@@ -119,7 +119,7 @@ export const Navbar = () => {
                         <li>
                             <Link to="/cart" className='navbar-links__cart-container'>
                                 <img src={cartIcon} alt="card" className='navbar-links__cart-icon' />
-                                <div className='navbar-links__cart-amount'>{amount}</div>
+                                <div className='navbar-links__cart-amount'>{cartItems.length}</div>
                             </Link>
                         </li>
                     </ul>

@@ -52,14 +52,18 @@ input{
     background-color: white;
     color: rgb(0, 0, 0);
     cursor: pointer;
-}
 
-.signup-btn:hover {
-    cursor: pointer;
-    background-color: $primary-color;
-    color: white;
-}
+    &:hover{
+        background-color: $primary-color;
+        color: white;
+    }
 
+    &:active{
+        background-color: white;
+        color: rgb(0, 0, 0);
+    }
+
+}
 
 @media screen and (max-width: 2560px) {
     .form-item {

@@ -64,6 +64,11 @@
             &:hover{
                 @include hoverButton;
             }
+
+            &:active{
+                background: $primary-color;
+                color: white;
+            }
         }
     }
 }
