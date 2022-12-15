@@ -9,7 +9,7 @@ export const Products = (props) => {
     const [active, setActive] = useState('all')
     const [colorActive, setColorActive] = useState('all')
 
-    const [data, loading] = useFetch(`http://localhost:5000/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`)
+    const [data, loading] = useFetch(`https://candleafs-api-1311.herokuapp.com/api/v1/candleafs?name=${searchName}&color=${color}&sort=${sort}&category=${active}&limit=${props.number}&popular=${props.popular}`)
     
     const clickColor = (e, type) => {
         e.preventDefault();

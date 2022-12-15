@@ -7,8 +7,9 @@ import { useFetch } from './Custom hooks/useFetch'
 export const SingleProduct = () => {
     const { id } = useParams();
     const [amount, setAmount] = useState(1);    
+    // const [isAdd, setIsAdd] = useState(false)
     const dispatch = useDispatch()
-    const [data, loading] = useFetch(`https://candleafs-api.herokuapp.com/api/v1/candleafs/`+ id)
+    const [data, loading] = useFetch(`https://candleafs-api-1311.herokuapp.com/api/v1/candleafs/`+ id)
     const increaseAmount = () => {
         setAmount(amount + 1) ;
     }
@@ -68,6 +69,7 @@ export const SingleProduct = () => {
                                 </div>
                                 <button className='single-product-info__add-btn' onClick={() => {
                                     dispatch(addItem({id, amount}))
+
                                 }}>
                                     <i className="fas fa-shopping-cart"></i>+ Add to cart   
                                 </button>
@@ -84,6 +86,10 @@ export const SingleProduct = () => {
                         </div>
                     </div>
                 </div>
+                {/* <div className={`${isAdd && 'toast'}`}>
+                    <i className="fas fa-check"></i>
+                    <span>Add to cart successfully</span>
+                </div> */}
             </div>
         )
     }

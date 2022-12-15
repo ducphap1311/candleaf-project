@@ -304,3 +304,37 @@
         }
     }
 }
+
+.toast{
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    background-color: rgba(green, 0.6);
+    padding: 10px;
+    border-left: 4px solid green;
+    font-size: 20px;
+    font-family: $font-roboto;
+    color: white;
+    animation: add-success 3s ease forwards;
+    
+    i{
+        color: rgb(255, 255, 255);
+        margin-right: 5px;
+    }
+}
+
+@keyframes add-success {
+    0%{
+        transform: translateX(110%);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(110%);
+    }
+}

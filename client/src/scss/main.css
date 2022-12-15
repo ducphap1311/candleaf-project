@@ -1760,6 +1760,63 @@
   }
 }
 
+.toast {
+  position: fixed;
+  top: 85px;
+  right: 10px;
+  background-color: rgba(0, 128, 0, 0.6);
+  padding: 10px;
+  border-left: 4px solid green;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  -webkit-animation: add-success 3s ease forwards;
+          animation: add-success 3s ease forwards;
+}
+
+.toast i {
+  color: white;
+  margin-right: 5px;
+}
+
+@-webkit-keyframes add-success {
+  0% {
+    -webkit-transform: translateX(110%);
+            transform: translateX(110%);
+  }
+  25% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  75% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(110%);
+            transform: translateX(110%);
+  }
+}
+
+@keyframes add-success {
+  0% {
+    -webkit-transform: translateX(110%);
+            transform: translateX(110%);
+  }
+  25% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  75% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(110%);
+            transform: translateX(110%);
+  }
+}
+
 *,
 ::after,
 ::before {
