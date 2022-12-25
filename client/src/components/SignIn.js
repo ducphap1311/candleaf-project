@@ -57,12 +57,11 @@ export const SignIn = () => {
         <div className='sign-in'>
             <form className='signin-form' onSubmit={formik.handleSubmit}>
                 <div className="form-item">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" style={{opacity: "0.7"}}>Email</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Email@gmail.com"
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
@@ -72,12 +71,11 @@ export const SignIn = () => {
                 </div>
 
                 <div className="form-item">
-                    <label htmlFor="passwordSignUp">Password</label>
+                    <label htmlFor="passwordSignUp" style={{opacity: "0.7"}}>Password</label>
                     <input
                         type="password"
                         id="passwordSignUp"
                         name="password"
-                        placeholder="********"
                         value={formik.values.password}
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
@@ -86,7 +84,7 @@ export const SignIn = () => {
                 </div>
 
                 <div>
-                    {error ? <p style={{color: "red"}}>Email or password wrong</p> : null}
+                    {error ? <p style={{color: "red", fontSize: "14px", marginBottom: "15px"}}>Email or password wrong</p> : null}
                 </div>
 
                 <div className="login">

@@ -67,12 +67,11 @@ export const SignUp = () => {
         <div className='sign-up'>
             <form onSubmit={formik.handleSubmit} className='signup-form'>
                 <div className="form-item">
-                    <label htmlFor="name">First and last name</label>
+                    <label htmlFor="name" style={{opacity: "0.8"}}>First and last name</label>
                     <input
                         type="text"
                         id="name"
                         name="name"
-                        placeholder="Enter your name"
                         value={formik.values.name}
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
@@ -81,12 +80,11 @@ export const SignUp = () => {
                 </div>
 
                 <div className="form-item">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" style={{opacity: "0.8"}}>Email</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
-                        placeholder="Email@gmail.com"
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
@@ -94,13 +92,12 @@ export const SignUp = () => {
                     {formik.errors.email && formik.touched.email ? <p className='error-message'>{formik.errors.email}</p>: null}
                 </div>
 
-                <div className="form-item">
+                <div className="form-item" style={{opacity: "0.8"}}>
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         id="password"
                         name="password"
-                        placeholder="********"
                         value={formik.values.password}
                         onChange={formik.handleChange}
                         onBlur = {formik.handleBlur}
@@ -109,21 +106,19 @@ export const SignUp = () => {
                 </div>
 
                 <div className="form-item">
-                    <label htmlFor="confirmPassword">Confirm password</label>
+                    <label htmlFor="confirmPassword" style={{opacity: "0.8"}}>Confirm password</label>
                     <input
                         type="password"
                         id="confirmPassword"
                         name="confirmPassword"
                         value={formik.values.confirmPassword}
-                        placeholder="********"
                         onChange={formik.handleChange}
-                        onBlur = {formik.handleBlur}
                     ></input>
                     {formik.errors.confirmPassword && formik.touched.confirmPassword ? <p className='error-message'>{formik.errors.confirmPassword}</p>: null}
                 </div>
 
                 <div>
-                    {error ? <p style={{color: "red", marginBottom: '20px', fontSize: '17px'}}>Email was used by other users</p> : null}
+                    {error ? <p style={{color: "red", marginBottom: '20px', fontSize: '14px'}}>Email was used by other users</p> : null}
                 </div>
 
                 <div className="login">
@@ -131,7 +126,7 @@ export const SignUp = () => {
                         type="submit"
                         className="signup-btn"
                     >
-                        Create an account
+                        Sign up
                     </button>
                 </div>
             </form>

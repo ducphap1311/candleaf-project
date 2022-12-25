@@ -12,10 +12,11 @@ export const HomePage = () => {
 
   useEffect(() => {
     dispatch(getAllCandleafs())
+    console.log('hello');
   }, [])
 
   if(isLoading){
-    return <h1 style={{textAlign: 'center', marginTop: '200px', fontFamily: 'sans-serif', color: '#474747'}}>Loading...</h1>
+    return <div className='loading'></div>
   }
   
   return (

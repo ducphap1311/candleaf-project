@@ -255,7 +255,7 @@
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product5.306f9394bf917bcaa899.png",
         "name": "Sweet Laravel",
         "price": 10.99,
-        "popular": false,
+        "popular": true,
         "amount": 1, 
         "color": "orange",
         "category": "office"
@@ -264,7 +264,7 @@
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product6.8ae8726320c7e23db0d1.png",
         "name": "Significant Cinnamon",
         "price": 9.99,
-        "popular": false,
+        "popular": true,
         "amount": 1, 
         "color": "brown",
         "category": "lr"
@@ -273,7 +273,7 @@
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product7.f184dc5c244d21f95e83.png",
         "name": "Ocean Cherries",
         "price": 8.99,
-        "popular": false,
+        "popular": true,
         "amount": 1, 
         "color": "red",
         "category": "bedroom"
@@ -282,7 +282,7 @@
         "img": "https://master--stellar-yeot-386602.netlify.app/static/media/product8.6335239fbca50d20fc87.png",
         "name": "Candy Lavarant",
         "price": 7.99,
-        "popular": false,
+        "popular": true,
         "amount": 1, 
         "color": "purple",
         "category": "office"

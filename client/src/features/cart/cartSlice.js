@@ -1,17 +1,25 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-    cartItems: JSON.parse(localStorage.getItem('cartItems')) === null? [] : JSON.parse(localStorage.getItem('cartItems')),
+    cartItems: JSON.parse(localStorage.getItem('cartItems')) ? [] : JSON.parse(localStorage.getItem('cartItems')),
     amount: 0,
     total: 0,
-    isLoading: false,
+    isLoading: true,
     isLogin: false,
-    data: []
+    data: [],
+    datas: []
 }
 
-export const getAllCandleafs = createAsyncThunk('card/getAllCarts', () => {
-    const url = 'https://candleafs-api-1311.herokuapp.com/api/v1/candleafs'
-    return fetch(url).then((resp) => resp.json()).catch((err) => console.log(err))
+export const getAllCandleafs = createAsyncThunk('card/getAllCarts', async () => {
+    try{
+        const url = 'https://candleafs-api-1311.herokuapp.com/api/v1/candleafs'
+        const response = await fetch(url)
+        const dataResponse = await response.json()
+        return dataResponse;
+    } catch(err){
+        console.log(err);
+    }
+    
 })
 
 const cartSlice = createSlice({
@@ -91,9 +99,11 @@ const cartSlice = createSlice({
         [getAllCandleafs.fulfilled]: (state, action) => {
             state.data = action.payload.candleafs
             state.isLoading = false
+            state.datas = action.payload.candleafs
         },
         [getAllCandleafs.rejected]: (state) => {
-            state.isLoading = true
+            state.isLoading = false
+            state.data = []
         }
     }
 })

@@ -7,7 +7,7 @@ import { SingleProductPage } from './pages/SingleProductPage';
 import { CartPage } from './pages/CartPage';
 import { ProductsPage } from './pages/ProductsPage';
 import ScrollToTop from './components/ScrollToTop';
-import './scss/main.css';
+import './styles/main.css';
 import { useEffect } from 'react';
 import { getTotalAmount, getAllCandleafs } from './features/cart/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,7 +36,7 @@ function App() {
         <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/about' element={<AboutPage />} />
-            <Route path='/singleproduct/:id' element={<SingleProductPage />} />
+            <Route path='/products/:id' element={<SingleProductPage />} />
             <Route path='/cart' element={<CartPage />} />
             <Route path='/products' element={<ProductsPage />}/>
             <Route path='/authentication' element={<AuthenticationPage />} />

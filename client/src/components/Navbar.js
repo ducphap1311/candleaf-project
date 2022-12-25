@@ -1,25 +1,25 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {useHover} from 'react-use';
 import {Link, NavLink, useNavigate} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { checkIsLogin } from '../features/cart/cartSlice'
 import logoImg from '../images/logo-img.svg'
 import logoText from '../images/logo-text.svg'
 import userIcon from '../images/user-icon.svg'
 import cartIcon from '../images/card-icon.svg'
 import menuIcon from '../images/hamburger-menu.png';
 import closeIcon from '../images/close-menu.png';
-import { useDispatch, useSelector } from 'react-redux';
-import { checkIsLogin } from '../features/cart/cartSlice'
 
 export const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false)
-    const { amount, isLogin, cartItems } = useSelector((store) => store.cart)
+    const { isLogin, cartItems } = useSelector((store) => store.cart)
     const linksContainerRef = useRef();
     const linksRef = useRef();
     const [userName, setUserName] = useState("")
     const [out, setOut] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate();
-
+    
     const signElement = (hovered) =>
     <div>
         <img src={userIcon} alt="user"
@@ -80,7 +80,7 @@ export const Navbar = () => {
                                     <p onClick={() => setOut(!out)}>{userName}</p>
                                     {out && <p onClick={() => {
                                         userLogOut()
-                                        navigate('/')
+                                        navigate('/signin')
                                         }} className = 'log-out'>Log out</p>}
                                     </div> : <>{hoverable}</>}
                         </li>
@@ -110,7 +110,7 @@ export const Navbar = () => {
                                     <p onClick={() => setOut(!out)}>{userName}</p>
                                     {out && <p onClick={() => {
                                         userLogOut()
-                                        navigate('/')
+                                        navigate('/signin')
                                         }} className='log-out'>Log out</p>}
                                     </div> : <>{hoverable}</>
                             }

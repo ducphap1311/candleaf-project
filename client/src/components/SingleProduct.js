@@ -1,15 +1,39 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
 import { useFetch } from './Custom hooks/useFetch'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const SingleProduct = () => {
     const { id } = useParams();
     const [amount, setAmount] = useState(1);    
     // const [isAdd, setIsAdd] = useState(false)
     const dispatch = useDispatch()
-    const [data, loading] = useFetch(`https://candleafs-api-1311.herokuapp.com/api/v1/candleafs/`+ id)
+    // const [data, loading] = useFetch(`https://candleafs-api-1311.herokuapp.com/api/v1/candleafs/`+ id)
+    const [data, setData] = useState({})
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        fetchData(`https://candleafs-api-1311.herokuapp.com/api/v1/candleafs/`+ id)
+    }, [])
+
+    const fetchData = async(url) => {
+        setLoading(true)
+        try {
+            const response = await fetch(url)
+            const dataResponse = await response.json()
+            if(dataResponse){
+                setData(dataResponse)
+            }
+            setLoading(false)
+            
+        } catch (error) {
+            console.log(error);
+            setLoading(false)
+        }
+    }
+
     const increaseAmount = () => {
         setAmount(amount + 1) ;
     }
@@ -22,10 +46,21 @@ export const SingleProduct = () => {
         }
     }
 
+    const notify = (id, amount) => {
+        toast.success('Add to cart successfully !!!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+        dispatch(addItem({id, amount}))
+    }
     if(loading){
-        return <div style={{}}>
-            <p style={{textAlign: 'center', marginTop: '100px', marginBottom: '600px', fontFamily: 'sans-serif', color: '#474747', fontSize: '30px', fontWeight: "bold"}}>Loading...</p>
-        </div>
+        return <div className='loading'></div>
     } else {
         const {img, name, price} = data.candleaf;
         return (
@@ -67,10 +102,7 @@ export const SingleProduct = () => {
                                     
                                     <p className='subscribe-text'>Subscribe now and get the 10% of discount on every recurring order.  The discount will be applied at checkout. <span>See details</span></p>
                                 </div>
-                                <button className='single-product-info__add-btn' onClick={() => {
-                                    dispatch(addItem({id, amount}))
-
-                                }}>
+                                <button className='single-product-info__add-btn' onClick={() => notify(id, amount)}>
                                     <i className="fas fa-shopping-cart"></i>+ Add to cart   
                                 </button>
                             </div>
@@ -90,6 +122,7 @@ export const SingleProduct = () => {
                     <i className="fas fa-check"></i>
                     <span>Add to cart successfully</span>
                 </div> */}
+                <ToastContainer />
             </div>
         )
     }

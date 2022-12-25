@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { increaseItem, decreaseItem, removeItem  } from '../features/cart/cartSlice'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartItems = () => {
     const dispatch = useDispatch();
@@ -31,7 +33,18 @@ export const CartItems = () => {
                                 <div className='product__info'>
                                     <div>
                                         <h2 className='product__name'>{name} Candleaf®</h2>
-                                        <button className='remove-btn' onClick={() => dispatch(removeItem(_id))}>Remove</button>
+                                        <button className='remove-btn' onClick={() => {dispatch(removeItem(_id))
+                                        // toast.error('Remove successfully!!!', {
+                                        //     position: "top-right",
+                                        //     autoClose: 3000,
+                                        //     hideProgressBar: false,
+                                        //     closeOnClick: true,
+                                        //     pauseOnHover: false,
+                                        //     draggable: true,
+                                        //     progress: undefined,
+                                        //     theme: "light",
+                                        //     });
+                                        }}>Remove</button>
                                     </div>
                                     <div>
                                         <p className='product__price'>${price}</p>
@@ -63,12 +76,13 @@ export const CartItems = () => {
                         <Link to="/authentication"><button>Check-out</button></Link>
                     </div>
                 </div>
+                {/* <ToastContainer /> */}
             </div>
         )
     } else {
         return <div className='empty-cart'>
                 <p>Your cart is empty</p>
-                <Link to='/products' className='fill-link'>Fill it</Link>
+                <Link to='/products' className='fill-link'>Fill it</Link>   
             </div>
     }
     

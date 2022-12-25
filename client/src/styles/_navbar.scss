@@ -60,7 +60,8 @@
     z-index: 1;
     width: 120px;
     border: 1px solid rgb(181, 181, 181);
-
+    transition: 0.3s ease;
+    
     .link-sign{
         padding: 6px;
         display: block;
@@ -69,11 +70,11 @@
         font-size: 17px;
 
             &:hover{
-                color: red;
+                opacity: 0.7;
             }
 
             &:active{
-                color: rgb(102, 0, 0);
+                opacity: 1;
             }
     }
 }
@@ -152,7 +153,7 @@
                     }
 
                     &:active{
-                        color:rgb(102, 0, 0);
+                        opacity: rgb(102, 0, 0);
                     }
                 }
             }

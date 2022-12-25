@@ -6,6 +6,7 @@ export const useFetch = (url) => {
 
     useEffect(() => {
         fetchData(url);
+
     }, [url])
 
     const fetchData = async(url) => {
